@@ -58,3 +58,11 @@ This remains an independent academic research prototype.
 - Interactive thematic choropleth map.
 - Executive research overview.
 - Unchanged verified research aggregate data.
+
+## Data Storytelling Edition
+
+- Plain-language editorial narratives.
+- Filter-aware descriptive insights.
+- Accessible terminology and interpretation.
+- Refined typography and chart palette.
+- Unchanged public data and BPS logo.

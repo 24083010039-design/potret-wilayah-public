@@ -24,34 +24,94 @@ REG = pd.DataFrame(D["regions"])
 KPI = pd.DataFrame(D["comparisons"])
 CAT = pd.DataFrame(D["catalog"])
 
-NAVY = "#142B43"
-TEAL = "#117C83"
-BLUE = "#9CB9CD"
+NAVY = "#102C46"
+TEAL = "#007F86"
+BLUE = "#D69A48"
 
 st.markdown('\n<style>\n\n:root {\n    --navy: #112b43;\n    --teal: #117c83;\n    --ink: #172f45;\n    --muted: #60778b;\n    --line: #dce5ed;\n    --surface: #ffffff;\n}\n\n.stApp {\n    background: #f1f5f9;\n}\n\n[data-testid="stHeader"] {\n    background: rgba(241,245,249,.96);\n}\n\n.block-container {\n    max-width: 1540px;\n    padding-top: 4.5rem;\n    padding-bottom: 2rem;\n}\n\n[data-testid="stSidebar"],\n[data-testid="stSidebarContent"] {\n    background: #112b43 !important;\n}\n\n[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {\n    gap: .5rem;\n}\n\n[data-testid="stSidebar"] h1,\n[data-testid="stSidebar"] h2,\n[data-testid="stSidebar"] h3,\n[data-testid="stSidebar"] p,\n[data-testid="stSidebar"] span,\n[data-testid="stSidebar"] a {\n    color: #e4edf5 !important;\n}\n\n[data-testid="stSidebar"] a {\n    border-radius: 8px;\n    padding: 8px 10px;\n    text-decoration: none;\n}\n\n[data-testid="stSidebar"] a:hover {\n    background: #24455f;\n}\n\n.st-key-current_nav {\n    background: #117c83;\n    border-radius: 8px;\n}\n\n[data-testid="stSidebar"] hr {\n    border-color: #3a5268;\n    margin: .6rem 0;\n}\n\n[data-testid="stSidebar"] [data-testid="stImage"] img {\n    background: white;\n    padding: 9px;\n    border-radius: 10px;\n    box-sizing: border-box;\n    max-width: 100%;\n    object-fit: contain;\n}\n\n.brand-name {\n    font-size: 24px;\n    font-weight: 800;\n    line-height: 1.1;\n    color: white;\n    letter-spacing: -.7px;\n    margin: 10px 0 6px;\n}\n\n.brand-sub {\n    color: #adc5d7;\n    font-size: 12px;\n    line-height: 1.5;\n}\n\n.nav-label {\n    color: #8cacc4;\n    font-size: 10px;\n    font-weight: 700;\n    letter-spacing: 1.5px;\n    margin: 8px 0 5px;\n}\n\n.hero {\n    position: relative;\n    overflow: hidden;\n    background: linear-gradient(\n        110deg,#112b43,#17445b\n    );\n    border-radius: 16px;\n    padding: 30px;\n    color: white;\n    margin-bottom: 12px;\n    border: 1px solid #294b65;\n}\n\n.hero::after {\n    content: "";\n    position: absolute;\n    width: 240px;\n    height: 240px;\n    right: -70px;\n    top: -120px;\n    border: 28px solid rgba(94,199,194,.09);\n    border-radius: 50%;\n    pointer-events: none;\n}\n\n.hero h1 {\n    color: white !important;\n    font-size: clamp(25px,3vw,40px);\n    font-weight: 780;\n    letter-spacing: -1px;\n    margin: 7px 0 10px;\n    padding: 0;\n    line-height: 1.15;\n}\n\n.hero p {\n    max-width: 850px;\n    color: #d8e6ef !important;\n    line-height: 1.7;\n    font-size: 14px;\n    margin: 0;\n}\n\n.eyebrow {\n    color: #7dd8d1;\n    font-size: 10px;\n    font-weight: 750;\n    letter-spacing: 1.8px;\n}\n\n[data-testid="stMetric"] {\n    background: #ffffff;\n    border: 1px solid #dce5ed;\n    border-top: 3px solid #117c83;\n    border-radius: 12px;\n    padding: 17px;\n    min-height: 108px;\n    box-shadow: 0 3px 12px rgba(17,43,67,.04);\n}\n\n[data-testid="stMetricLabel"] {\n    color: #60778b;\n}\n\n[data-testid="stMetricValue"] {\n    color: #112b43;\n    font-weight: 750;\n}\n\n[data-testid="stVerticalBlockBorderWrapper"] {\n    border-color: #dce5ed;\n}\n\n[data-testid="stPlotlyChart"] {\n    background: white;\n    border-radius: 12px;\n    overflow: hidden;\n    border: 1px solid #dce5ed;\n}\n\n[data-testid="stDataFrame"] {\n    border-radius: 10px;\n    overflow: hidden;\n    border: 1px solid #dce5ed;\n}\n\n[data-baseweb="select"] > div {\n    background: #ffffff;\n    border-color: #d1dce6;\n    border-radius: 8px;\n}\n\n[data-testid="stMain"] h2,\n[data-testid="stMain"] h3 {\n    color: #172f45;\n    letter-spacing: -.35px;\n}\n\n[data-testid="stCaptionContainer"] {\n    line-height: 1.6;\n}\n\n.research-note {\n    background: #e3f1ef;\n    color: #205e60;\n    padding: 15px 18px;\n    border-left: 4px solid #117c83;\n    border-radius: 7px;\n    line-height: 1.6;\n    font-size: 13px;\n}\n\n@media(max-width: 640px) {\n    .block-container {\n        padding-top: 4rem;\n        padding-left: 1rem;\n        padding-right: 1rem;\n    }\n\n    .hero {\n        padding: 20px;\n        border-radius: 12px;\n    }\n\n    .hero h1 {\n        font-size: 26px;\n    }\n\n    [data-testid="stMetric"] {\n        padding: 12px;\n        min-height: 90px;\n    }\n}\n\n</style>\n', unsafe_allow_html=True)
 
+st.markdown('\n<style>\n\n:root {\n    --ink:#102c46;\n    --muted:#506579;\n    --teal:#007f86;\n    --amber:#d69a48;\n    --line:#dce5ed;\n    --paper:#fcfdff;\n}\n\n.stApp,\n[data-testid="stAppViewContainer"] {\n    background:#f0f4f8;\n}\n\n[data-testid="stMain"],\n[data-testid="stSidebar"],\n.stMarkdown,\n.stMetric {\n    font-family:\n        "Segoe UI",\n        system-ui,\n        -apple-system,\n        BlinkMacSystemFont,\n        Arial,\n        sans-serif;\n}\n\n[data-testid="stHeader"] {\n    background:rgba(240,244,248,.96);\n}\n\n.block-container {\n    max-width:1500px;\n    padding-top:4rem;\n    padding-bottom:3rem;\n}\n\n[data-testid="stSidebar"],\n[data-testid="stSidebarContent"] {\n    background:#102c46 !important;\n}\n\n[data-testid="stSidebar"] p {\n    color:#d4e2ed !important;\n    font-size:14px;\n    line-height:1.5;\n}\n\n[data-testid="stSidebar"] a {\n    border-radius:9px;\n    padding:10px 12px;\n}\n\n[data-testid="stSidebar"] a:hover {\n    background:#214864;\n}\n\n.st-key-current_nav {\n    background:#007f86 !important;\n    border-radius:9px;\n}\n\n.brand-name {\n    font-size:26px;\n    font-weight:800;\n    line-height:1.08;\n    letter-spacing:-1.1px;\n}\n\n.brand-sub {\n    color:#bfd3e3;\n    font-size:13px;\n}\n\n.nav-label {\n    font-size:10px;\n    letter-spacing:1.7px;\n    color:#a5c7db;\n}\n\n.hero {\n    padding:32px;\n    border-radius:18px;\n    background:\n      radial-gradient(\n        circle at 95% 5%,\n        #245e72,\n        transparent 45%\n      ),\n      linear-gradient(\n        120deg,#102c46,#164158\n      );\n}\n\n.hero h1 {\n    font-size:clamp(28px,3.5vw,44px);\n    font-weight:780;\n    letter-spacing:-1.4px;\n    line-height:1.12;\n}\n\n.hero p {\n    font-size:15px;\n    line-height:1.65;\n}\n\n.eyebrow {\n    color:#92e2db;\n    font-size:11px;\n    letter-spacing:1.6px;\n}\n\n.hero-question {\n    color:#d7ecee;\n    font-size:16px;\n    font-weight:650;\n    margin-top:13px;\n}\n\n[data-testid="stMetric"] {\n    background:#fff;\n    border:1px solid #dce5ed;\n    border-top:3px solid #007f86;\n    border-radius:14px;\n    padding:18px;\n    box-shadow:0 4px 16px #102c4608;\n}\n\n[data-testid="stMetricValue"] {\n    color:#102c46;\n    font-size:clamp(28px,3vw,40px);\n    font-weight:750;\n    letter-spacing:-1px;\n    font-variant-numeric:tabular-nums;\n}\n\n[data-testid="stMetricLabel"] {\n    color:#506579;\n    font-size:14px;\n}\n\n[data-testid="stVerticalBlockBorderWrapper"] {\n    border-color:#dce5ed;\n    background:#fff;\n    border-radius:14px;\n}\n\n[data-testid="stPlotlyChart"] {\n    background:#fff;\n    border:1px solid #e1e8ef;\n    border-radius:13px;\n}\n\n[data-testid="stMain"] h2 {\n    font-size:clamp(23px,2.1vw,29px);\n    font-weight:720;\n    letter-spacing:-.6px;\n    color:#102c46;\n}\n\n[data-testid="stMain"] h3 {\n    font-weight:700;\n    color:#102c46;\n}\n\n[data-testid="stMain"] .stMarkdown p {\n    line-height:1.7;\n}\n\n.story {\n    background:#fff;\n    border:1px solid #d8e5eb;\n    border-left:5px solid #007f86;\n    border-radius:13px;\n    padding:21px 23px;\n    margin:7px 0 16px;\n    box-shadow:0 4px 14px #102c4608;\n}\n\n.story-tag {\n    font-size:10px;\n    color:#00747a;\n    font-weight:800;\n    letter-spacing:1.4px;\n    text-transform:uppercase;\n    margin-bottom:9px;\n}\n\n.story-head {\n    font-size:clamp(20px,2.1vw,29px);\n    color:#102c46;\n    font-weight:750;\n    line-height:1.3;\n    letter-spacing:-.5px;\n    margin-bottom:11px;\n}\n\n.story-copy {\n    color:#40566c;\n    font-size:15px;\n    line-height:1.75;\n}\n\n.story-limit {\n    border-top:1px solid #e4ebf1;\n    padding-top:11px;\n    margin-top:13px;\n    color:#506579;\n    font-size:13px;\n    line-height:1.6;\n}\n\n[data-testid="stDataFrame"] {\n    border-radius:11px;\n    border:1px solid #dce5ed;\n}\n\n[data-testid="stCaptionContainer"] {\n    color:#506579;\n    line-height:1.6;\n}\n\n@media(max-width:640px) {\n\n    .block-container {\n        padding-top:4rem;\n        padding-left:1rem;\n        padding-right:1rem;\n    }\n\n    .hero {\n        padding:21px;\n        border-radius:12px;\n    }\n\n    .hero h1 {\n        font-size:27px;\n    }\n\n    .story {\n        padding:16px;\n    }\n\n    .story-head {\n        font-size:21px;\n    }\n\n    .story-copy {\n        font-size:14px;\n    }\n\n    [data-testid="stMetric"] {\n        padding:12px;\n    }\n}\n\n</style>\n',unsafe_allow_html=True)
+
+from html import escape
+
+def story(headline,body,limit="",tag="INTI TEMUAN"):
+
+    caveat = ""
+
+    if limit:
+
+        caveat = (
+            '<div class="story-limit">'
+            '<b>Perlu diketahui:</b> '
+            +escape(str(limit))
+            +'</div>'
+        )
+
+    st.markdown(
+        '<section class="story" data-story="v1">'
+        '<div class="story-tag">'
+        +escape(str(tag))
+        +'</div><div class="story-head">'
+        +escape(str(headline))
+        +'</div><div class="story-copy">'
+        +escape(str(body))
+        +'</div>'
+        +caveat
+        +'</section>',
+        unsafe_allow_html=True
+    )
+
+def idnum(value,digits=1):
+
+    return f"{float(value):.{digits}f}".replace(".",",")
+
+
+
 def hero(title,text):
 
-    sections = {
-        "Ringkasan Wilayah":"01 / EXECUTIVE OVERVIEW",
-        "Perkotaan vs Perdesaan":"02 / COMPARATIVE ANALYTICS",
-        "Analisis Antarwilayah":"03 / REGIONAL INTELLIGENCE",
-        "Peta Spasial":"04 / GEOSPATIAL INTELLIGENCE",
-        "Kinerja Model":"05 / MACHINE LEARNING",
-        "Faktor Pembeda":"06 / FEATURE INTELLIGENCE",
-        "Kamus Indikator":"07 / DATA DICTIONARY",
-        "Metode & Keterbatasan":"08 / RESEARCH METHODS"
+    headings = {
+        "Ringkasan Wilayah":(
+            "01 / GAMBARAN UMUM",
+            "Seperti apa karakteristik wilayah Bangka Belitung?"
+        ),
+        "Perkotaan vs Perdesaan":(
+            "02 / PERBANDINGAN",
+            "Apa yang membedakan kedua kelompok wilayah?"
+        ),
+        "Analisis Antarwilayah":(
+            "03 / EKSPLORASI WILAYAH",
+            "Bagaimana cakupan penelitian tersebar?"
+        ),
+        "Peta Spasial":(
+            "04 / INFORMASI GEOGRAFIS",
+            "Di mana desa dan kelurahan tersebar?"
+        ),
+        "Kinerja Model":(
+            "05 / EVALUASI PREDIKSI",
+            "Seberapa baik model membedakan wilayah?"
+        ),
+        "Faktor Pembeda":(
+            "06 / MEMAHAMI MODEL",
+            "Informasi apa yang membantu model?"
+        ),
+        "Kamus Indikator":(
+            "07 / PANDUAN MEMBACA DATA",
+            "Apa arti istilah dan angka dalam dashboard?"
+        ),
+        "Metode & Keterbatasan":(
+            "08 / TRANSPARANSI PENELITIAN",
+            "Bagaimana hasil penelitian ini diperoleh?"
+        )
     }
 
-    label = sections.get(
-        title,"POTRET WILAYAH"
-    )
+    section,question = headings[title]
 
     st.markdown(
         f"""
         <div class="hero">
-            <div class="eyebrow">{label}</div>
+            <div class="eyebrow">{section}</div>
             <h1>{title}</h1>
+            <div class="hero-question">{question}</div>
             <p>{text}</p>
         </div>
         """,
@@ -65,7 +125,7 @@ def chart(fig,height=430):
         height=height,
         margin=dict(l=20,r=24,t=35,b=28),
         font=dict(
-            family="Arial, sans-serif",
+            family="Segoe UI, Arial, sans-serif",
             color=NAVY,
             size=12
         ),
@@ -91,13 +151,13 @@ def chart(fig,height=430):
     ):
 
         fig.update_xaxes(
-            gridcolor="#e7eef4",
+            gridcolor="#e1e8ef",
             zerolinecolor="#cbd8e3",
             automargin=True
         )
 
         fig.update_yaxes(
-            gridcolor="#e7eef4",
+            gridcolor="#e1e8ef",
             zerolinecolor="#cbd8e3",
             automargin=True
         )
@@ -131,9 +191,24 @@ def home():
 
     hero(
         "Ringkasan Wilayah",
-        "Business Intelligence untuk memahami "
+        "Mengenal "
         "karakteristik perkotaan dan perdesaan "
         "Kepulauan Bangka Belitung."
+    )
+
+
+    rural_pct = P["rural"]/P["total"]*100
+
+    story(
+        f"{idnum(rural_pct)}% desa/kelurahan berstatus perdesaan",
+        f"Dari {P['total']} desa dan kelurahan yang diteliti, "
+        f"{P['rural']} berstatus perdesaan dan "
+        f"{P['urban']} berstatus perkotaan. "
+        "Kelompok perdesaan merupakan bagian terbesar "
+        "dari cakupan penelitian.",
+        "Status perkotaan atau perdesaan bukan "
+        "peringkat kesejahteraan maupun kemajuan.",
+        tag="CERITA UTAMA"
     )
 
     a,b,c,d = st.columns(4)
@@ -170,7 +245,7 @@ def home():
                 values=[P["urban"],P["rural"]],
                 hole=.72,
                 marker_colors=[
-                    "#117c83","#9cb9cd"
+                    "#007f86","#d69a48"
                 ],
                 textinfo="percent",
                 sort=False
@@ -205,7 +280,7 @@ def home():
             )
 
             fig.update_traces(
-                marker_color="#117c83",
+                marker_color="#007f86",
                 textposition="outside",
                 cliponaxis=False
             )
@@ -304,6 +379,39 @@ def contrast():
         KPI.domain==domain
     ]
 
+
+    frame = frame.assign(
+        abs_gap=frame.gap.abs()
+    ).sort_values(
+        "abs_gap",ascending=False
+    )
+
+    top = frame.iloc[0]
+
+    direction = (
+        "perkotaan"
+        if top.gap>0
+        else "perdesaan"
+        if top.gap<0
+        else "kedua kelompok"
+    )
+
+    story(
+        f"{domain}: selisih terbesar {idnum(abs(top.gap))} poin persentase",
+        f"Indikator {top['name']} memiliki nilai "
+        f"{idnum(top.urban)}% pada kelompok perkotaan "
+        f"dan {idnum(top.rural)}% pada kelompok perdesaan. "
+        +(
+            f"Nilai lebih tinggi terdapat pada kelompok {direction}."
+            if top.gap!=0
+            else "Nilai kedua kelompok sama."
+        ),
+        "Poin persentase adalah selisih dua persentase. "
+        "Nilai tinggi atau rendah tidak selalu berarti "
+        "kondisi lebih baik atau lebih buruk. "
+        "Selisih bukan bukti hubungan sebab-akibat."
+    )
+
     long = frame.melt(
         id_vars=["name"],
         value_vars=["urban","rural"],
@@ -327,7 +435,22 @@ def contrast():
         labels={"name":"Indikator"}
     )
 
-    fig.update_xaxes(range=[0,100])
+
+    fig.update_xaxes(
+        range=[0,100],
+        ticksuffix="%"
+    )
+
+    fig.update_yaxes(
+        autorange="reversed",
+        categoryorder="array",
+        categoryarray=frame["name"].tolist()
+    )
+
+    fig.update_traces(
+        hovertemplate="%{y}<br>%{x:.1f}%<extra></extra>"
+    )
+
 
     chart(fig,max(330,95*len(frame)))
 
@@ -376,6 +499,22 @@ def regional():
     if f.empty:
         st.info("Pilih minimal satu wilayah.")
         return
+
+
+    biggest = f.loc[f.total.idxmax()]
+
+    coverage = f.total.sum()/P["total"]*100
+
+    story(
+        f"{len(f)} wilayah mencakup {int(f.total.sum())} desa",
+        f"Wilayah terpilih mencakup {idnum(coverage)}% "
+        "dari seluruh desa dalam penelitian. "
+        f"{biggest['name']} memiliki jumlah terbesar "
+        f"di dalam pilihan saat ini, yaitu "
+        f"{int(biggest['total'])} desa/kelurahan.",
+        "Jumlah desa bukan jumlah penduduk dan bukan "
+        "ukuran tingkat pembangunan."
+    )
 
     fig = px.bar(
         f.sort_values("total",ascending=False),
@@ -484,6 +623,18 @@ def spatial():
             )
 
             share = total/P["total"]
+
+
+            story(
+                selected if selected!="Semua"
+                else "Seluruh Bangka Belitung",
+                f"Pilihan saat ini mencakup {total} desa "
+                f"atau {idnum(share*100)}% "
+                "dari cakupan penelitian.",
+                "Warna lebih pekat berarti jumlah desa "
+                "lebih banyak, bukan daerah lebih maju.",
+                tag="CARA MEMBACA PETA"
+            )
 
             st.metric("Jumlah desa",total)
 
@@ -676,10 +827,60 @@ def performance():
         key="model_metric"
     )
 
+
+    explanations = {
+        "MCC":(
+            "Ukuran kesesuaian prediksi dan status aktual, "
+            "dengan mempertimbangkan kedua kelas. "
+            "Skor 1 berarti kesesuaian sempurna; "
+            "0 mendekati tidak ada hubungan prediksi."
+        ),
+        "Balanced accuracy":(
+            "Rata-rata kemampuan mengenali "
+            "masing-masing kelas wilayah."
+        ),
+        "Accuracy":(
+            "Proporsi prediksi yang benar "
+            "pada data pengujian."
+        ),
+        "ROC-AUC":(
+            "Kemampuan model membedakan dua kelas "
+            "pada berbagai ambang keputusan."
+        ),
+        "PR-AUC":(
+            "Ringkasan hubungan precision dan recall "
+            "pada kelas positif di berbagai ambang."
+        )
+    }
+
+    leader = m.loc[m[metric].idxmax()]
+
+    other = m[
+        m.model!=leader["model"]
+    ].iloc[0]
+
+    difference = (
+        float(leader[metric])
+        -float(other[metric])
+    )
+
+    story(
+        f"{leader['model']}: {idnum(leader[metric],3)}",
+        f"Pada metrik {metric}, model ini memiliki "
+        "rata-rata tertinggi di antara kedua kandidat "
+        f"dengan selisih {idnum(difference,3)}. "
+        +explanations[metric],
+        "Hasil ini berasal dari evaluasi stratified. "
+        "Keunggulan rata-rata belum membuktikan "
+        "signifikansi statistik atau keberhasilan "
+        "pada wilayah baru.",
+        tag="MEMAHAMI HASIL MODEL"
+    )
+
     fig = px.bar(
         m,x="model",y=metric,
         color="model",
-        color_discrete_sequence=[TEAL,BLUE],
+        color_discrete_sequence=["#536fa6","#007f86"],
         text_auto=".3f",
         labels={"model":"Model"},
         error_y="MCC_SD" if metric=="MCC" else None
@@ -744,6 +945,22 @@ def factors():
         {"Domain":k,"Importance":v}
         for k,v in D["importance"][model].items()
     ]).sort_values("Importance")
+
+
+    leader = f.loc[f.Importance.idxmax()]
+
+    story(
+        f"{leader['Domain']} paling membantu prediksi",
+        f"Pada model {model}, domain "
+        f"{leader['Domain']} memiliki permutation "
+        f"importance terbesar, yaitu "
+        f"{idnum(leader.Importance,4)} MCC. "
+        "Artinya performa model rata-rata menurun "
+        "ketika informasi domain tersebut diacak.",
+        "Importance menunjukkan kegunaan informasi "
+        "bagi prediksi, bukan penyebab resmi "
+        "suatu desa berstatus perkotaan atau perdesaan."
+    )
 
     f["Arah"] = f.Importance.map(
         lambda v:"Positif" if v>=0 else "Negatif"
@@ -810,6 +1027,36 @@ def dictionary():
         )
         f = f[mask]
 
+
+    available = int(f.published.sum())
+
+    story(
+        f"{len(f)} indikator dalam pilihan saat ini",
+        f"Sebanyak {available} indikator di dalam "
+        "pilihan ini memiliki nilai perbandingan "
+        "yang tersedia untuk publik. "
+        "Kamus membantu memahami nama, kelompok, "
+        "satuan dan status ketersediaan indikator.",
+        "Nilai yang tidak dirilis bukan berarti nol.",
+        tag="PANDUAN DATA"
+    )
+
+    with st.expander("Istilah penting untuk pemula"):
+
+        st.markdown(
+            """
+- **KPI:** ukuran atau indikator yang digunakan
+  untuk merangkum karakteristik wilayah.
+- **Persentase:** bagian dari setiap 100 unit.
+- **Poin persentase:** selisih dua persentase.
+- **Agregat:** data yang diringkas menjadi kelompok.
+- **Perkotaan/perdesaan:** status klasifikasi
+  statistik wilayah, bukan nilai kesejahteraan.
+- **Model prediksi:** metode untuk memperkirakan
+  kategori berdasarkan karakteristik yang tersedia.
+            """
+        )
+
     f["Status publik"] = f.published.map({
         True:"Nilai terpilih tersedia",
         False:"Nilai tidak dirilis"
@@ -842,6 +1089,56 @@ def methods():
         "Dokumentasi sumber, evaluasi model, "
         "privasi, dan interpretasi."
     )
+
+
+    story(
+        "Dari data desa menjadi informasi wilayah",
+        "Penelitian menghubungkan karakteristik desa "
+        "dari PODES 2025 dengan status klasifikasi "
+        "resmi perkotaan dan perdesaan. "
+        "Karakteristik tersebut dirangkum melalui "
+        "statistik dan digunakan untuk mengevaluasi "
+        "dua model klasifikasi.",
+        "Dashboard adalah prototipe penelitian. "
+        "Model tidak menggantikan prosedur resmi "
+        "klasifikasi BPS.",
+        tag="MEMAHAMI PROSES"
+    )
+
+    st.subheader("Alur penelitian")
+
+    steps = [
+        (
+            "01",
+            "Sumber",
+            "PODES dan status klasifikasi resmi."
+        ),
+        (
+            "02",
+            "Persiapan",
+            "Penyelarasan unit dan variabel."
+        ),
+        (
+            "03",
+            "Analisis",
+            "Statistik dan evaluasi model."
+        ),
+        (
+            "04",
+            "Publikasi",
+            "Agregat terpilih dan visualisasi."
+        )
+    ]
+
+    for col,(n,label,desc) in zip(
+        st.columns(4),steps
+    ):
+
+        with col:
+            with st.container(border=True):
+                st.caption(n)
+                st.markdown(f"**{label}**")
+                st.write(desc)
 
     st.subheader("Sumber dan unit analisis")
 
@@ -962,7 +1259,7 @@ with st.sidebar:
         </div>
         <div class="brand-sub">
             Kepulauan Bangka Belitung<br>
-            Research &amp; Business Intelligence
+            Data, Wilayah &amp; Cerita
         </div>
         """,
         unsafe_allow_html=True
@@ -1011,7 +1308,7 @@ with st.sidebar:
     st.divider()
 
     st.caption(
-        "PODES 2025 | Final Edition V2.0"
+        "PODES 2025 | Data Storytelling Edition"
     )
 
     st.caption(
@@ -1025,6 +1322,6 @@ nav.run()
 st.divider()
 
 st.caption(
-    "Potret Wilayah V2.0 | Prototipe akademik | "
+    "Potret Wilayah | Data Storytelling Edition | Prototipe akademik | "
     "Agregat penelitian terpilih"
 )
