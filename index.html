@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;background:#f5f7fa;color:#142b43;
+font-family:Arial,sans-serif
+}
+.hero{
+background:#142b43;color:white;
+padding:28px;border-radius:16px
+}
+.hero h1{font-size:clamp(23px,4vw,36px);margin:12px 0}
+.hero p{color:#dce5ec;line-height:1.6}
+.eyebrow{font-size:12px;letter-spacing:2px;color:#80d4d2}
+.filters{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}
+.field{flex:1;min-width:160px}
+label{display:block;font-size:13px;font-weight:bold;margin-bottom:8px}
+select{
+width:100%;padding:12px;border:1px solid #cedae3;
+border-radius:8px;background:white;color:#142b43
+}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card,.panel{
+padding:18px;border-radius:12px;background:white;
+border:1px solid #dce5ec
+}
+.card span{font-size:13px;color:#65788b}
+.card strong{display:block;font-size:30px;margin-top:12px}
+.panel{margin-top:20px}
+.panel h2{font-size:19px;margin-top:0}
+.track{display:flex;height:25px;border-radius:6px;overflow:hidden;background:#eee}
+.urban{background:#117c83}
+.rural{background:#9cb9cd}
+.bar-row{margin:18px 0}
+.bar-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px}
+.legend,.note{font-size:12px;color:#65788b;line-height:1.7}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:11px 6px;border-bottom:1px solid #dce5ec;text-align:right}
+td:first-child,th:first-child{text-align:left}
+.table-wrap{overflow-x:auto}
+@media(max-width:760px){
+.cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:380px){
+.cards{grid-template-columns:1fr}
+.hero{padding:18px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="eyebrow">POTRET WILAYAH | PUBLIC DEMO</div>
+<h1>Profil dan Komposisi Wilayah</h1>
+<p>Eksplorasi karakteristik perkotaan dan perdesaan
+menggunakan data sintetis untuk demonstrasi Business Intelligence.</p>
+</section>
+
+<div class="filters">
+<div class="field">
+<label for="region">Wilayah</label>
+<select id="region">
+<option value="all">Seluruh wilayah</option>
+<option value="a">Wilayah Fiktif A</option>
+<option value="b">Wilayah Fiktif B</option>
+<option value="c">Wilayah Fiktif C</option>
+<option value="d">Wilayah Fiktif D</option>
+</select>
+</div>
+<div class="field">
+<label for="group">Kelompok desa</label>
+<select id="group">
+<option value="all">Semua kelompok</option>
+<option value="urban">Perkotaan</option>
+<option value="rural">Perdesaan</option>
+</select>
+</div>
+</div>
+
+<section class="cards">
+<div class="card"><span>Total desa simulasi</span><strong id="total">0</strong></div>
+<div class="card"><span>Perkotaan</span><strong id="urban">0</strong></div>
+<div class="card"><span>Perdesaan</span><strong id="rural">0</strong></div>
+<div class="card"><span>Proporsi perkotaan</span><strong id="ratio">0%</strong></div>
+</section>
+
+<section class="panel">
+<h2>Komposisi Desa Menurut Wilayah</h2>
+<div class="legend">Perkotaan: teal | Perdesaan: biru muda</div>
+<div id="bars"></div>
+</section>
+
+<section class="panel">
+<h2>Ringkasan Data Sintetis</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Wilayah</th><th>Perkotaan</th>
+<th>Perdesaan</th><th>Total</th>
+</tr>
+</thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+<p class="note">
+Denominator adalah jumlah desa pada cakupan filter aktif.
+Seluruh angka merupakan simulasi dan tidak boleh
+ditafsirkan sebagai statistik resmi.
+</p>
+</section>
+
+<script>
+"use strict";
+
+const dataset = [
+{id:"a",name:"Wilayah Fiktif A",urban:32,rural:18},
+{id:"b",name:"Wilayah Fiktif B",urban:15,rural:45},
+{id:"c",name:"Wilayah Fiktif C",urban:27,rural:23},
+{id:"d",name:"Wilayah Fiktif D",urban:12,rural:38}
+];
+
+const get=id=>document.getElementById(id);
+
+function add(parent,tag,text,cls){
+ const el=document.createElement(tag);
+ el.textContent=text;
+ if(cls)el.className=cls;
+ parent.appendChild(el);
+ return el;
+}
+
+function render(){
+ const region=get("region").value;
+ const group=get("group").value;
+
+ const rows=dataset
+ .filter(r=>region==="all"||r.id===region)
+ .map(r=>({
+  ...r,
+  urban:group==="rural"?0:r.urban,
+  rural:group==="urban"?0:r.rural
+ }));
+
+ const urban=rows.reduce((s,r)=>s+r.urban,0);
+ const rural=rows.reduce((s,r)=>s+r.rural,0);
+ const total=urban+rural;
+
+ get("total").textContent=total;
+ get("urban").textContent=urban;
+ get("rural").textContent=rural;
+ get("ratio").textContent=total?
+ (100*urban/total).toFixed(1)+"%":"-";
+
+ get("bars").replaceChildren();
+ get("rows").replaceChildren();
+
+ rows.forEach(r=>{
+  const n=r.urban+r.rural;
+  const row=add(get("bars"),"div","","bar-row");
+  const label=add(row,"div","","bar-label");
+  add(label,"span",r.name);
+  add(label,"strong",String(n));
+  const track=add(row,"div","","track");
+  add(track,"div","","urban").style.width=
+   (n?100*r.urban/n:0)+"%";
+  add(track,"div","","rural").style.width=
+   (n?100*r.rural/n:0)+"%";
+
+  const tr=add(get("rows"),"tr","");
+  [r.name,r.urban,r.rural,n].forEach(v=>
+   add(tr,"td",String(v))
+  );
+ });
+}
+
+get("region").addEventListener("change",render);
+get("group").addEventListener("change",render);
+render();
+</script>
+</body>
+</html>

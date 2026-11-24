@@ -1,0 +1,9 @@
+*
+!.gitignore
+!app.py
+!index.html
+!README.md
+!requirements.txt
+!.streamlit/
+.streamlit/*
+!.streamlit/config.toml
