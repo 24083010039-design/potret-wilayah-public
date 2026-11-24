@@ -28,85 +28,96 @@ NAVY = "#142B43"
 TEAL = "#117C83"
 BLUE = "#9CB9CD"
 
-st.markdown("""
-<style>
-.stApp {
-    background: #f5f7fa;
-}
-[data-testid="stSidebar"] {
-    background: #142b43;
-}
-[data-testid="stSidebarNav"] a {
-    color: #e5edf5 !important;
-    border-radius: 7px;
-}
-[data-testid="stSidebarNav"] a[aria-current="page"] {
-    background: #117c83 !important;
-    color: white !important;
-}
-[data-testid="stSidebar"] p {
-    color: #e5edf5;
-}
-[data-testid="stMetric"] {
-    background: white;
-    border: 1px solid #dce5ec;
-    border-radius: 12px;
-    padding: 17px;
-}
-.block-container {
-    padding-top: 2.6rem;
-    max-width: 1500px;
-}
-.hero {
-    background: #142b43;
-    color: white;
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 24px;
-}
-.hero h1 {
-    color: white;
-    font-size: clamp(24px,3.4vw,36px);
-    margin: 5px 0;
-}
-.hero p {
-    color: #dce7f0;
-    line-height: 1.6;
-    margin-bottom: 0;
-}
-.eyebrow {
-    color: #83d3d1;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1.4px;
-}
-</style>
-""", unsafe_allow_html=True)
+st.markdown('\n<style>\n\n:root {\n    --navy: #112b43;\n    --teal: #117c83;\n    --ink: #172f45;\n    --muted: #60778b;\n    --line: #dce5ed;\n    --surface: #ffffff;\n}\n\n.stApp {\n    background: #f1f5f9;\n}\n\n[data-testid="stHeader"] {\n    background: rgba(241,245,249,.96);\n}\n\n.block-container {\n    max-width: 1540px;\n    padding-top: 4.5rem;\n    padding-bottom: 2rem;\n}\n\n[data-testid="stSidebar"],\n[data-testid="stSidebarContent"] {\n    background: #112b43 !important;\n}\n\n[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {\n    gap: .5rem;\n}\n\n[data-testid="stSidebar"] h1,\n[data-testid="stSidebar"] h2,\n[data-testid="stSidebar"] h3,\n[data-testid="stSidebar"] p,\n[data-testid="stSidebar"] span,\n[data-testid="stSidebar"] a {\n    color: #e4edf5 !important;\n}\n\n[data-testid="stSidebar"] a {\n    border-radius: 8px;\n    padding: 8px 10px;\n    text-decoration: none;\n}\n\n[data-testid="stSidebar"] a:hover {\n    background: #24455f;\n}\n\n.st-key-current_nav {\n    background: #117c83;\n    border-radius: 8px;\n}\n\n[data-testid="stSidebar"] hr {\n    border-color: #3a5268;\n    margin: .6rem 0;\n}\n\n[data-testid="stSidebar"] [data-testid="stImage"] img {\n    background: white;\n    padding: 9px;\n    border-radius: 10px;\n    box-sizing: border-box;\n    max-width: 100%;\n    object-fit: contain;\n}\n\n.brand-name {\n    font-size: 24px;\n    font-weight: 800;\n    line-height: 1.1;\n    color: white;\n    letter-spacing: -.7px;\n    margin: 10px 0 6px;\n}\n\n.brand-sub {\n    color: #adc5d7;\n    font-size: 12px;\n    line-height: 1.5;\n}\n\n.nav-label {\n    color: #8cacc4;\n    font-size: 10px;\n    font-weight: 700;\n    letter-spacing: 1.5px;\n    margin: 8px 0 5px;\n}\n\n.hero {\n    position: relative;\n    overflow: hidden;\n    background: linear-gradient(\n        110deg,#112b43,#17445b\n    );\n    border-radius: 16px;\n    padding: 30px;\n    color: white;\n    margin-bottom: 12px;\n    border: 1px solid #294b65;\n}\n\n.hero::after {\n    content: "";\n    position: absolute;\n    width: 240px;\n    height: 240px;\n    right: -70px;\n    top: -120px;\n    border: 28px solid rgba(94,199,194,.09);\n    border-radius: 50%;\n    pointer-events: none;\n}\n\n.hero h1 {\n    color: white !important;\n    font-size: clamp(25px,3vw,40px);\n    font-weight: 780;\n    letter-spacing: -1px;\n    margin: 7px 0 10px;\n    padding: 0;\n    line-height: 1.15;\n}\n\n.hero p {\n    max-width: 850px;\n    color: #d8e6ef !important;\n    line-height: 1.7;\n    font-size: 14px;\n    margin: 0;\n}\n\n.eyebrow {\n    color: #7dd8d1;\n    font-size: 10px;\n    font-weight: 750;\n    letter-spacing: 1.8px;\n}\n\n[data-testid="stMetric"] {\n    background: #ffffff;\n    border: 1px solid #dce5ed;\n    border-top: 3px solid #117c83;\n    border-radius: 12px;\n    padding: 17px;\n    min-height: 108px;\n    box-shadow: 0 3px 12px rgba(17,43,67,.04);\n}\n\n[data-testid="stMetricLabel"] {\n    color: #60778b;\n}\n\n[data-testid="stMetricValue"] {\n    color: #112b43;\n    font-weight: 750;\n}\n\n[data-testid="stVerticalBlockBorderWrapper"] {\n    border-color: #dce5ed;\n}\n\n[data-testid="stPlotlyChart"] {\n    background: white;\n    border-radius: 12px;\n    overflow: hidden;\n    border: 1px solid #dce5ed;\n}\n\n[data-testid="stDataFrame"] {\n    border-radius: 10px;\n    overflow: hidden;\n    border: 1px solid #dce5ed;\n}\n\n[data-baseweb="select"] > div {\n    background: #ffffff;\n    border-color: #d1dce6;\n    border-radius: 8px;\n}\n\n[data-testid="stMain"] h2,\n[data-testid="stMain"] h3 {\n    color: #172f45;\n    letter-spacing: -.35px;\n}\n\n[data-testid="stCaptionContainer"] {\n    line-height: 1.6;\n}\n\n.research-note {\n    background: #e3f1ef;\n    color: #205e60;\n    padding: 15px 18px;\n    border-left: 4px solid #117c83;\n    border-radius: 7px;\n    line-height: 1.6;\n    font-size: 13px;\n}\n\n@media(max-width: 640px) {\n    .block-container {\n        padding-top: 4rem;\n        padding-left: 1rem;\n        padding-right: 1rem;\n    }\n\n    .hero {\n        padding: 20px;\n        border-radius: 12px;\n    }\n\n    .hero h1 {\n        font-size: 26px;\n    }\n\n    [data-testid="stMetric"] {\n        padding: 12px;\n        min-height: 90px;\n    }\n}\n\n</style>\n', unsafe_allow_html=True)
 
-def hero(title, text):
+def hero(title,text):
+
+    sections = {
+        "Ringkasan Wilayah":"01 / EXECUTIVE OVERVIEW",
+        "Perkotaan vs Perdesaan":"02 / COMPARATIVE ANALYTICS",
+        "Analisis Antarwilayah":"03 / REGIONAL INTELLIGENCE",
+        "Peta Spasial":"04 / GEOSPATIAL INTELLIGENCE",
+        "Kinerja Model":"05 / MACHINE LEARNING",
+        "Faktor Pembeda":"06 / FEATURE INTELLIGENCE",
+        "Kamus Indikator":"07 / DATA DICTIONARY",
+        "Metode & Keterbatasan":"08 / RESEARCH METHODS"
+    }
+
+    label = sections.get(
+        title,"POTRET WILAYAH"
+    )
+
     st.markdown(
-        f"""<div class="hero">
-        <div class="eyebrow">
-        POTRET WILAYAH | RESEARCH PUBLIC VIEW
+        f"""
+        <div class="hero">
+            <div class="eyebrow">{label}</div>
+            <h1>{title}</h1>
+            <p>{text}</p>
         </div>
-        <h1>{title}</h1><p>{text}</p>
-        </div>""",
+        """,
         unsafe_allow_html=True
     )
 
-def chart(fig, height=430):
+def chart(fig,height=430):
+
     fig.update_layout(
         template="plotly_white",
         height=height,
-        margin=dict(l=12,r=12,t=22,b=12),
-        font=dict(color=NAVY,size=13),
-        paper_bgcolor="white",
-        plot_bgcolor="white",
-        legend_title_text=""
+        margin=dict(l=20,r=24,t=35,b=28),
+        font=dict(
+            family="Arial, sans-serif",
+            color=NAVY,
+            size=12
+        ),
+        paper_bgcolor="#ffffff",
+        plot_bgcolor="#ffffff",
+        legend_title_text="",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            x=0
+        ),
+        hoverlabel=dict(
+            bgcolor=NAVY,
+            font_color="white",
+            font_size=12
+        )
     )
+
+    if any(
+        tr.type in ("bar","scatter","scattergl")
+        for tr in fig.data
+    ):
+
+        fig.update_xaxes(
+            gridcolor="#e7eef4",
+            zerolinecolor="#cbd8e3",
+            automargin=True
+        )
+
+        fig.update_yaxes(
+            gridcolor="#e7eef4",
+            zerolinecolor="#cbd8e3",
+            automargin=True
+        )
+
+    fig.update_traces(
+        selector=dict(type="bar"),
+        marker_line_width=0
+    )
+
     st.plotly_chart(
-        fig, use_container_width=True,
-        config={"displaylogo":False}
+        fig,
+        use_container_width=True,
+        config={
+            "displaylogo":False,
+            "responsive":True,
+            "toImageButtonOptions":{
+                "format":"png",
+                "scale":2
+            }
+        }
     )
 
 def note():
@@ -117,65 +128,161 @@ def note():
     )
 
 def home():
+
     hero(
         "Ringkasan Wilayah",
-        "Profil perkotaan dan perdesaan "
+        "Business Intelligence untuk memahami "
+        "karakteristik perkotaan dan perdesaan "
         "Kepulauan Bangka Belitung."
     )
 
     a,b,c,d = st.columns(4)
 
-    a.metric("Desa / kelurahan",P["total"])
-    b.metric("Perkotaan",P["urban"])
-    c.metric("Perdesaan",P["rural"])
-    d.metric("Kabupaten / kota",len(REG))
+    a.metric(
+        "Desa / kelurahan",
+        P["total"]
+    )
+
+    b.metric(
+        "Perkotaan",
+        P["urban"]
+    )
+
+    c.metric(
+        "Perdesaan",
+        P["rural"]
+    )
+
+    d.metric(
+        "Kabupaten / kota",
+        len(REG)
+    )
 
     left,right = st.columns([1,1.6])
 
     with left:
-        st.subheader("Komposisi provinsi")
-        fig = go.Figure(go.Pie(
-            labels=["Perkotaan","Perdesaan"],
-            values=[P["urban"],P["rural"]],
-            hole=0.65,
-            marker_colors=[TEAL,BLUE],
-            textinfo="percent"
-        ))
-        chart(fig,350)
+        with st.container(border=True):
+
+            st.subheader("Komposisi wilayah")
+
+            fig = go.Figure(go.Pie(
+                labels=["Perkotaan","Perdesaan"],
+                values=[P["urban"],P["rural"]],
+                hole=.72,
+                marker_colors=[
+                    "#117c83","#9cb9cd"
+                ],
+                textinfo="percent",
+                sort=False
+            ))
+
+            fig.add_annotation(
+                text=f"<b>{P['total']}</b><br>Desa",
+                x=.5,y=.5,
+                showarrow=False,
+                font=dict(size=22,color=NAVY)
+            )
+
+            chart(fig,350)
 
     with right:
-        st.subheader("Cakupan desa per wilayah")
-        fig = px.bar(
-            REG.sort_values("total"),
-            x="total",y="name",
-            orientation="h",
-            labels={
-                "total":"Jumlah desa",
-                "name":"Kabupaten/kota"
-            },
-            text_auto=True
-        )
-        fig.update_traces(marker_color=TEAL)
-        chart(fig,350)
+        with st.container(border=True):
 
-    st.subheader("Temuan deskriptif")
+            st.subheader(
+                "Cakupan desa per kabupaten/kota"
+            )
 
-    st.write(
-        f"Sebanyak **{P['urban']/P['total']*100:.1f}%** "
-        "desa/kelurahan berstatus perkotaan."
-    )
+            f = REG.sort_values("total")
 
-    st.write(
-        "Kelompok perdesaan lebih besar "
-        "daripada kelompok perkotaan."
-    )
+            fig = px.bar(
+                f,x="total",y="name",
+                orientation="h",
+                text_auto=True,
+                labels={
+                    "total":"Jumlah desa",
+                    "name":""
+                }
+            )
 
-    biggest = REG.loc[REG.total.idxmax()]
+            fig.update_traces(
+                marker_color="#117c83",
+                textposition="outside",
+                cliponaxis=False
+            )
 
-    st.write(
-        f"Wilayah dengan cakupan desa terbanyak "
-        f"adalah {biggest['name']} "
-        f"({biggest['total']} desa)."
+            fig.update_xaxes(
+                range=[0,float(f.total.max())*1.2]
+            )
+
+            chart(fig,350)
+
+    st.subheader("Temuan utama penelitian")
+
+    urban_share = P["urban"]/P["total"]*100
+
+    gap = KPI.loc[
+        KPI.gap.abs().idxmax()
+    ]
+
+    largest = REG.loc[
+        REG.total.idxmax()
+    ]
+
+    a,b,c = st.columns(3)
+
+    with a:
+        with st.container(border=True):
+
+            st.caption("01 / KOMPOSISI")
+            st.metric(
+                "Proporsi perkotaan",
+                f"{urban_share:.1f}%"
+            )
+
+            st.write(
+                "Kelompok perdesaan lebih besar "
+                "daripada kelompok perkotaan "
+                "pada cakupan penelitian ini."
+            )
+
+    with b:
+        with st.container(border=True):
+
+            st.caption("02 / CAKUPAN")
+            st.metric(
+                largest["name"],
+                int(largest["total"])
+            )
+
+            st.write(
+                "Wilayah dengan jumlah desa "
+                "terbanyak dalam data penelitian."
+            )
+
+    with c:
+        with st.container(border=True):
+
+            st.caption("03 / PERBANDINGAN")
+            st.metric(
+                "Selisih absolut terbesar",
+                f"{abs(gap['gap']):.1f} pp"
+            )
+
+            st.write(
+                f"{gap['name']}, di antara "
+                "12 indikator publik terpilih."
+            )
+
+    st.markdown(
+        """
+        <div class="research-note">
+        <b>Catatan interpretasi</b><br>
+        Dashboard menampilkan agregat penelitian.
+        Perbedaan karakteristik wilayah merupakan
+        temuan deskriptif, bukan bukti hubungan kausal.
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
     note()
@@ -295,94 +402,260 @@ def regional():
     note()
 
 def spatial():
+
     hero(
         "Peta Spasial",
-        "Batas administrasi kabupaten/kota "
-        "dan cakupan desa penelitian."
+        "Eksplorasi cakupan administrasi "
+        "dan jumlah desa/kelurahan per wilayah."
     )
+
+    a,b,c,d = st.columns(4)
+
+    a.metric("Total desa",P["total"])
+    b.metric("Kabupaten/kota",len(REG))
+    c.metric("Perkotaan",P["urban"])
+    d.metric("Perdesaan",P["rural"])
 
     features = D["geo"]["features"]
 
     if not features:
-        st.warning(
-            "Aset batas wilayah belum tersedia "
-            "pada paket publik ini."
-        )
+        st.warning("Geometri tidak tersedia.")
         return
-
-    selected = st.selectbox(
-        "Sorot wilayah",
-        ["Semua"]+REG.name.tolist(),
-        key="map_region"
-    )
 
     lookup = {
         r["code"]:r for r in D["regions"]
     }
 
-    fig = go.Figure()
+    def points(obj):
+
+        if (
+            isinstance(obj,list)
+            and len(obj)>=2
+            and isinstance(obj[0],(int,float))
+            and isinstance(obj[1],(int,float))
+        ):
+            yield obj[0],obj[1]
+
+        elif isinstance(obj,list):
+
+            for item in obj:
+                yield from points(item)
+
+    coords = []
 
     for feature in features:
-        info = lookup[feature["properties"]["code"]]
-        geom = feature["geometry"]
-
-        polygons = (
-            [geom["coordinates"]]
-            if geom["type"]=="Polygon"
-            else geom["coordinates"]
+        coords.extend(
+            points(
+                feature["geometry"]["coordinates"]
+            )
         )
 
-        active = (
-            selected=="Semua"
-            or selected==info["name"]
+    min_lon = min(x for x,y in coords)
+    max_lon = max(x for x,y in coords)
+    min_lat = min(y for x,y in coords)
+    max_lat = max(y for x,y in coords)
+
+    center = {
+        "lon":(min_lon+max_lon)/2,
+        "lat":(min_lat+max_lat)/2
+    }
+
+    left,right = st.columns([2.4,1])
+
+    with right:
+
+        with st.container(border=True):
+
+            st.subheader("Profil wilayah")
+
+            selected = st.selectbox(
+                "Sorot wilayah",
+                ["Semua"]+REG.name.tolist(),
+                key="map_region"
+            )
+
+            selected_frame = (
+                REG if selected=="Semua"
+                else REG[REG.name==selected]
+            )
+
+            total = int(
+                selected_frame.total.sum()
+            )
+
+            share = total/P["total"]
+
+            st.metric("Jumlah desa",total)
+
+            st.metric(
+                "Proporsi terhadap provinsi",
+                f"{share*100:.1f}%"
+            )
+
+            st.progress(
+                share,
+                text="Cakupan desa penelitian"
+            )
+
+            st.caption(
+                "Peta menggunakan jumlah "
+                "desa/kelurahan, bukan proporsi "
+                "perkotaan per kabupaten."
+            )
+
+        with st.container(border=True):
+
+            st.subheader("Informasi peta")
+
+            st.write("**Sumber geometri:** BIG")
+            st.write("**Referensi batas:** 2023")
+            st.write("**Data penelitian:** PODES 2025")
+
+            st.caption(
+                "Gunakan zoom, geser peta, "
+                "atau arahkan pointer ke wilayah "
+                "untuk melihat informasi."
+            )
+
+    with left:
+
+        st.subheader(
+            "Peta tematik Bangka Belitung"
         )
 
-        color = TEAL if active else "#b9cbd9"
+        scale = [
+            [0,"#c7e7e0"],
+            [.35,"#83c8bd"],
+            [.65,"#318f93"],
+            [1,"#12536a"]
+        ]
 
-        x,y = [],[]
+        values = REG.total.tolist()
 
-        for polygon in polygons:
-            for ring in polygon:
-                x.extend(pt[0] for pt in ring)
-                y.extend(pt[1] for pt in ring)
-                x.append(None)
-                y.append(None)
-
-        fig.add_trace(go.Scattergl(
-            x=x,y=y,mode="lines",
-            line=dict(color=color,width=1.8),
-            name=info["name"],
-            text=[
-                f"{info['name']}: "
-                f"{info['total']} desa"
-            ]*len(x),
-            hoverinfo="text",
-            showlegend=True
+        fig = go.Figure(go.Choroplethmap(
+            geojson=D["geo"],
+            featureidkey="properties.code",
+            locations=REG.code.tolist(),
+            z=values,
+            customdata=[
+                [r["name"],
+                 r["total"]/P["total"]*100]
+                for r in D["regions"]
+            ],
+            colorscale=scale,
+            zmin=min(values),
+            zmax=max(values),
+            marker=dict(
+                opacity=.94,
+                line=dict(
+                    color="#ffffff",
+                    width=1.4
+                )
+            ),
+            colorbar=dict(
+                title="Jumlah desa",
+                orientation="h",
+                x=.5,
+                xanchor="center",
+                y=-.10,
+                len=.72,
+                thickness=13
+            ),
+            hovertemplate=(
+                "<b>%{customdata[0]}</b>"
+                "<br>Jumlah desa: %{z}"
+                "<br>Cakupan: "
+                "%{customdata[1]:.1f}%"
+                "<extra></extra>"
+            )
         ))
 
-    fig.update_yaxes(
-        scaleanchor="x",
-        scaleratio=1,
-        visible=False
+        if selected!="Semua":
+
+            row = REG[
+                REG.name==selected
+            ].iloc[0]
+
+            fig.add_trace(
+                go.Choroplethmap(
+                    geojson=D["geo"],
+                    featureidkey="properties.code",
+                    locations=[row["code"]],
+                    z=[int(row["total"])],
+                    colorscale=scale,
+                    zmin=min(values),
+                    zmax=max(values),
+                    showscale=False,
+                    marker=dict(
+                        opacity=1,
+                        line=dict(
+                            color="#112b43",
+                            width=3
+                        )
+                    ),
+                    hovertemplate=(
+                        f"<b>{row['name']}</b>"
+                        "<br>Jumlah desa: %{z}"
+                        "<extra></extra>"
+                    )
+                )
+            )
+
+        fig.update_layout(
+            map=dict(
+                style="white-bg",
+                center=center,
+                zoom=5.35
+            ),
+            height=520,
+            margin=dict(
+                l=0,r=0,t=5,b=65
+            ),
+            paper_bgcolor="white",
+            hoverlabel=dict(
+                bgcolor="#112b43",
+                font_color="white"
+            )
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True,
+            config={
+                "displaylogo":False,
+                "responsive":True,
+                "scrollZoom":False
+            }
+        )
+
+        st.caption(
+            "Warna menunjukkan jumlah desa "
+            "dalam cakupan penelitian."
+        )
+
+    st.subheader("Cakupan administratif")
+
+    table = REG[["name","total"]].copy()
+
+    table["Cakupan (%)"] = (
+        table.total/P["total"]*100
+    ).round(1)
+
+    table = table.rename(columns={
+        "name":"Kabupaten/kota",
+        "total":"Jumlah desa"
+    })
+
+    st.dataframe(
+        table,
+        hide_index=True,
+        use_container_width=True
     )
 
-    fig.update_xaxes(visible=False)
-
-    chart(fig,570)
-
-    if selected!="Semua":
-        n = int(
-            REG.loc[
-                REG.name==selected,"total"
-            ].iloc[0]
-        )
-        st.metric(selected,n)
-
     st.caption(
-        "Sumber batas wilayah: BIG, RBI 1:50.000, "
-        "Administrasi Kabupaten/Kota, referensi 2023. "
-        "Geometri disederhanakan untuk visualisasi. "
-        "Tanpa basemap daring; bukan peta legal."
+        "Sumber batas: BIG, RBI 1:50.000, "
+        "referensi 2023. Geometri disederhanakan. "
+        "Bukan peta legal atau publikasi resmi BPS."
     )
 
 def performance():
@@ -664,18 +937,94 @@ pages = [
     )
 ]
 
-with st.sidebar:
-    st.markdown("### POTRET WILAYAH")
-    st.caption("Bangka Belitung | PODES 2025")
-    st.divider()
-    st.caption("Public research view")
 
-nav = st.navigation(pages,position="sidebar")
+nav = st.navigation(
+    pages,position="hidden"
+)
+
+with st.sidebar:
+
+    logo = (
+        Path(__file__).parent
+        / "bps-logo.png"
+    )
+
+    if logo.is_file():
+        st.image(
+            str(logo),
+            width=220
+        )
+
+    st.markdown(
+        """
+        <div class="brand-name">
+            POTRET<br>WILAYAH
+        </div>
+        <div class="brand-sub">
+            Kepulauan Bangka Belitung<br>
+            Research &amp; Business Intelligence
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.divider()
+
+    st.markdown(
+        '<div class="nav-label">'
+        'EKSPLORASI DATA'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    for index,p in enumerate(pages):
+
+        if index==4:
+            st.markdown(
+                '<div class="nav-label">'
+                'ANALISIS PENELITIAN'
+                '</div>',
+                unsafe_allow_html=True
+            )
+
+        if p.url_path==nav.url_path:
+
+            with st.container(
+                key="current_nav"
+            ):
+                st.page_link(
+                    p,
+                    label=p.title,
+                    icon=p.icon,
+                    width="stretch"
+                )
+
+        else:
+
+            st.page_link(
+                p,
+                label=p.title,
+                icon=p.icon,
+                width="stretch"
+            )
+
+    st.divider()
+
+    st.caption(
+        "PODES 2025 | Final Edition V2.0"
+    )
+
+    st.caption(
+        "Prototipe akademik. "
+        "Bukan publikasi resmi BPS."
+    )
+
 nav.run()
+
 
 st.divider()
 
 st.caption(
-    "Potret Wilayah | Prototipe akademik | "
+    "Potret Wilayah V2.0 | Prototipe akademik | "
     "Agregat penelitian terpilih"
 )

@@ -1,5 +1,5 @@
 
-# Potret Wilayah
+# Potret Wilayah - Final Edition V2.0
 
 Urban-Rural Village Classification and
 Interactive Business Intelligence.
@@ -21,7 +21,7 @@ province and district-total level.
 ## Privacy
 
 No village microdata, individual predictions,
-institutional logo, credentials or trained models.
+credentials or trained models.
 
 Small outcome categories are excluded from the
 published urban-rural indicator comparisons.
@@ -45,3 +45,16 @@ an official government publication.
 
 Branch: main
 Entrypoint: app.py
+
+## Branding
+
+Institutional logo included following the publisher's confirmation of permission.
+This remains an independent academic research prototype.
+
+## Final Edition
+
+- Professional navy-teal design system.
+- Custom eight-page navigation.
+- Interactive thematic choropleth map.
+- Executive research overview.
+- Unchanged verified research aggregate data.
