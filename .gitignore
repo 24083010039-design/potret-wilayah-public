@@ -1,8 +1,8 @@
 *
 !.gitignore
-!app.py
-!index.html
 !README.md
+!app.py
+!data.json
 !requirements.txt
 !.streamlit/
 .streamlit/*
