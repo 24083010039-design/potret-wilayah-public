@@ -1,0 +1,78 @@
+{
+  "release_scope": "Approved aggregate research outputs only; no village-level records or internal-only indicator aggregates.",
+  "class_definition": {
+    "positive": "perkotaan",
+    "positive_class": 1,
+    "negative": "perdesaan",
+    "negative_class": 0
+  },
+  "confusion_matrices": {
+    "Logistic Regression": [
+      [
+        1136,
+        74
+      ],
+      [
+        167,
+        588
+      ]
+    ],
+    "Random Forest": [
+      [
+        1139,
+        71
+      ],
+      [
+        140,
+        615
+      ]
+    ]
+  },
+  "prediction_context": {
+    "outer_folds": 25,
+    "unique_units": 393,
+    "predictions_per_model": 1965,
+    "interpretation": "Repeated out-of-fold predictions; not unique villages."
+  },
+  "model_comparison": {
+    "p_corrected": 0.2362,
+    "test": "Nadeau-Bengio corrected resampled t, two-sided",
+    "n_folds": 25
+  },
+  "feature_audit": {
+    "summary": {
+      "feature_count": 52,
+      "pair_count": 1326,
+      "exact_equal_pairs": 0,
+      "observed_a_to_b_mappings": 17,
+      "observed_b_to_a_mappings": 43,
+      "spearman_nonnull_pairs": 1225,
+      "spearman_null_pairs": 101,
+      "abs_spearman_ge_0_80": 4,
+      "abs_spearman_ge_0_95": 1
+    },
+    "threshold_abs_spearman": 0.8,
+    "strong_pairs": [
+      {
+        "feature_a": "R701CK4",
+        "feature_b": "R701CK5",
+        "spearman": 0.9999738
+      },
+      {
+        "feature_a": "R801B1",
+        "feature_b": "R801B2",
+        "spearman": 0.927
+      },
+      {
+        "feature_a": "R701EK4",
+        "feature_b": "R701EK5",
+        "spearman": 0.9225
+      },
+      {
+        "feature_a": "R701EK2",
+        "feature_b": "R701EK5",
+        "spearman": -0.8013
+      }
+    ]
+  }
+}

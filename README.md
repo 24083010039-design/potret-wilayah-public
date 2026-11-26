@@ -1,68 +1,23 @@
+# Potret Wilayah — Public Dashboard
 
-# Potret Wilayah - Final Edition V2.0
-
-Urban-Rural Village Classification and
-Interactive Business Intelligence.
-
-## Public research view
-
-Eight interactive Streamlit pages for exploring
-selected village-level research aggregates at
-province and district-total level.
-
-## Sources
-
-- PODES 2025 research aggregates.
-- Official 2025 classification labels.
-- Archived model evaluation summaries.
-- BIG RBI 1:50,000 district boundaries,
-  2023 reference, simplified visualization.
-
-## Privacy
-
-No village microdata, individual predictions,
-credentials or trained models.
-
-Small outcome categories are excluded from the
-published urban-rural indicator comparisons.
-
-District-level class counts are not published.
-
-## Limitations
-
-The complete KPI reconciliation, insight audit
-and semantic feature lineage remain open.
-
-This independent academic prototype is not
-an official government publication.
+Potret Wilayah is an independent research dashboard for aggregated village/urban classification findings in Kepulauan Bangka Belitung. It is not an official BPS publication and does not imply institutional endorsement.
 
 ## Run
 
-    pip install -r requirements.txt
-    streamlit run app.py
+```powershell
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
 
-## Deployment
+## Contents and interpretation
 
-Branch: main
-Entrypoint: app.py
+- The package includes 393-unit regional summaries, 12 selected public comparisons, 34 indicator metadata records, seven administrative map geometries, and approved aggregate model-evaluation results.
+- It contains no village-level microdata, individual predictions, credentials, internal-only aggregate previews, or local research-file loaders.
+- Percentages refer to villages/kelurahan in the indicated group, not residents. Model results are cross-validation summaries and repeated out-of-fold counts; they are not forecasts or a replacement for the official classification.
+- BIG administrative geometry is simplified for visualization and is not a legal boundary product. BPS logo, research output, geometry, metadata, and model-result publication were authorized for this release.
+- Definitions that are research-derived are labeled as such; the interface does not claim formal item-by-item BPS definition verification.
+- Plus Jakarta Sans is distributed under SIL Open Font License 1.1; see `assets/fonts/OFL.txt`.
 
-## Branding
+## Data and source acknowledgments
 
-Institutional logo included following the publisher's confirmation of permission.
-This remains an independent academic research prototype.
-
-## Final Edition
-
-- Professional navy-teal design system.
-- Custom eight-page navigation.
-- Interactive thematic choropleth map.
-- Executive research overview.
-- Unchanged verified research aggregate data.
-
-## Data Storytelling Edition
-
-- Plain-language editorial narratives.
-- Filter-aware descriptive insights.
-- Accessible terminology and interpretation.
-- Refined typography and chart palette.
-- Unchanged public data and BPS logo.
+Research data and classification sources are described in the application’s Methods page. The seven-region map uses BIG/RBI administrative geometry as identified in the dashboard. Values are aggregates only.

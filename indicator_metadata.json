@@ -1,0 +1,1811 @@
+{
+  "provenance": {
+    "source": "Kamus penelitian final, KPI_CATALOG.csv, INDICATOR_DICTIONARY.csv, dan data.json lokal.",
+    "definition_status": "Semua uraian adalah metadata/penjelasan turunan penelitian. Tidak ada klaim definisi resmi BPS yang diverifikasi penuh.",
+    "formula_audit": "Rumus teknis tiap kode dibandingkan terhadap KPI_CATALOG.csv; formula sumber dan hasil pemeriksaan dicatat per indikator.",
+    "comparison_values": "Nilai kota/perdesaan/provinsi disalin hanya untuk kode yang tersedia pada data.json comparisons (12 indikator terpilih); tidak dibuat nilai baru.",
+    "privacy": "Sumber, data.json, nilai riset, geometri, dan logo tidak diubah oleh proses rekonsiliasi ini."
+  },
+  "indicators": [
+    {
+      "code": "G01",
+      "domain": "Geografi",
+      "name": "Desa berbatasan laut",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa berbatasan laut",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R302A = 1) / COUNT(desa) × 100",
+      "source_variables": "R302A",
+      "interpretation": "Proporsi desa pesisir",
+      "limitation": "Tidak mengukur panjang garis pantai, luas pesisir, jumlah penduduk pesisir, kegiatan ekonomi, atau risiko bencana.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa pesisir",
+      "operational_definition": "Satu desa masuk pembilang jika R302A berkode 1 (ada wilayah yang berbatasan langsung dengan laut).",
+      "formula_readable": "(desa yang berbatasan langsung dengan laut) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa yang berbatasan langsung dengan laut",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R302A = 1) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R302A = 1) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R302A",
+          "label": "Ada wilayah desa/kelurahan yang berbatasan langsung dengan laut",
+          "valid_values": "1 = ada; 2 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa pesisir",
+      "what_cannot_be_concluded": "Tidak mengukur panjang garis pantai, luas pesisir, jumlah penduduk pesisir, kegiatan ekonomi, atau risiko bencana.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "G01",
+        "name": "Desa berbatasan laut",
+        "domain": "Geografi",
+        "urban": 33.8,
+        "rural": 48.8,
+        "province": 43.0,
+        "gap": -15.0
+      }
+    },
+    {
+      "code": "G02",
+      "domain": "Geografi",
+      "name": "Desa di dalam atau tepi kawasan hutan",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa di dalam/di tepi kawasan hutan",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R303A IN {1,2}) / COUNT(desa) × 100",
+      "source_variables": "R303A",
+      "interpretation": "Proporsi desa yang wilayahnya di dalam atau di tepi kawasan hutan",
+      "limitation": "Tidak mengukur luas atau tutupan hutan, kondisi ekologi, status hak, maupun akses pengelolaan hutan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa yang wilayahnya di dalam atau di tepi kawasan hutan",
+      "operational_definition": "Satu desa masuk pembilang jika R303A berkode 1 (di dalam) atau 2 (di tepi/sekitar kawasan hutan).",
+      "formula_readable": "(desa di dalam atau di tepi/sekitar kawasan hutan) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa di dalam atau di tepi/sekitar kawasan hutan",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R303A IN {1,2}) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R303A IN {1,2}) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R303A",
+          "label": "Lokasi wilayah desa/kelurahan terhadap kawasan hutan/hutan",
+          "valid_values": "1 = di dalam kawasan hutan; 2 = di tepi/sekitar kawasan hutan; 3 = di luar kawasan hutan",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa yang wilayahnya di dalam atau di tepi kawasan hutan",
+      "what_cannot_be_concluded": "Tidak mengukur luas atau tutupan hutan, kondisi ekologi, status hak, maupun akses pengelolaan hutan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "G02",
+        "name": "Desa di dalam atau tepi kawasan hutan",
+        "domain": "Geografi",
+        "urban": 41.7,
+        "rural": 88.8,
+        "province": 70.7,
+        "gap": -47.1
+      }
+    },
+    {
+      "code": "G03",
+      "domain": "Geografi",
+      "name": "Jumlah RT",
+      "unit": "RT",
+      "published": false,
+      "formal_name": "Jumlah RT",
+      "measure_type": "total",
+      "unit_in_source": "RT",
+      "calculation": "SUM(R304B)",
+      "source_variables": "R304B",
+      "interpretation": "Banyaknya satuan lingkungan setempat (RT)",
+      "limitation": "Bukan jumlah penduduk atau keluarga. Total juga dipengaruhi banyaknya unit wilayah dan tidak mengukur kepadatan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "RT",
+      "plain_language": "Banyaknya satuan lingkungan setempat (RT)",
+      "operational_definition": "Menjumlahkan banyaknya RT (R304B) dari unit desa/kelurahan dalam cakupan.",
+      "formula_readable": "jumlah total: jumlah Rukun Tetangga (RT) yang tercatat pada seluruh desa",
+      "numerator": "jumlah Rukun Tetangga (RT) yang tercatat pada seluruh desa",
+      "denominator": "Tidak berlaku; ukuran jumlah total",
+      "calculation_technical": "SUM(R304B)",
+      "research_catalog_formula": "SUM(R304B)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R304B",
+          "label": "Jumlah Rukun Tetangga (RT) di desa/kelurahan",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Banyaknya satuan lingkungan setempat (RT)",
+      "what_cannot_be_concluded": "Bukan jumlah penduduk atau keluarga. Total juga dipengaruhi banyaknya unit wilayah dan tidak mengukur kepadatan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "G04",
+      "domain": "Geografi",
+      "name": "Rata-rata RT per desa",
+      "unit": "RT/desa",
+      "published": false,
+      "formal_name": "Rata-rata RT per desa",
+      "measure_type": "mean_per_village",
+      "unit_in_source": "RT/desa",
+      "calculation": "SUM(R304B) / COUNT(desa)",
+      "source_variables": "R304B",
+      "interpretation": "Ukuran kasar skala administratif desa",
+      "limitation": "Bukan kepadatan penduduk, jumlah keluarga, atau ukuran langsung besar-kecilnya wilayah.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "RT/desa",
+      "plain_language": "Ukuran kasar skala administratif desa",
+      "operational_definition": "Total R304B dibagi jumlah unit desa/kelurahan dalam cakupan.",
+      "formula_readable": "total jumlah RT yang tercatat pada seluruh desa ÷ jumlah desa/kelurahan dalam cakupan",
+      "numerator": "jumlah RT yang tercatat pada seluruh desa",
+      "denominator": "jumlah desa/kelurahan dalam cakupan",
+      "calculation_technical": "SUM(R304B) / COUNT(desa)",
+      "research_catalog_formula": "SUM(R304B) / COUNT(desa)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R304B",
+          "label": "Jumlah Rukun Tetangga (RT) di desa/kelurahan",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Ukuran kasar skala administratif desa",
+      "what_cannot_be_concluded": "Bukan kepadatan penduduk, jumlah keluarga, atau ukuran langsung besar-kecilnya wilayah.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "I01",
+      "domain": "Infrastruktur",
+      "name": "Keluarga pengguna listrik PLN",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase keluarga pengguna listrik PLN",
+      "measure_type": "ratio_of_sums",
+      "unit_in_source": "%",
+      "calculation": "SUM(R501A1) / SUM(R501A1 + R501A2 + R501B) × 100",
+      "source_variables": "R501A1, R501A2, R501B",
+      "interpretation": "Cakupan listrik PLN terhadap keluarga yang tercatat pada blok 501",
+      "limitation": "Penyebut diturunkan dari tiga kategori pada Blok 501, bukan variabel jumlah keluarga R401c yang tidak didiseminasikan. Jangan menghitung rerata persentase desa; ini bukan ukuran keandalan, jam layanan, atau mutu listrik.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Cakupan listrik PLN terhadap keluarga yang tercatat pada blok 501",
+      "operational_definition": "Menjumlahkan hitungan keluarga pada tiga kategori R501, lalu menghitung porsi kategori pengguna PLN. Jumlah keluarga adalah proksi sebagaimana dicatat kamus penelitian.",
+      "formula_readable": "(keluarga pengguna listrik PLN (Σ R501A1)) ÷ (keluarga pada tiga kategori listrik: PLN + non-PLN + bukan pengguna) × 100%",
+      "numerator": "keluarga pengguna listrik PLN (Σ R501A1)",
+      "denominator": "keluarga pada tiga kategori listrik: PLN + non-PLN + bukan pengguna",
+      "calculation_technical": "SUM(R501A1) / SUM(R501A1 + R501A2 + R501B) × 100",
+      "research_catalog_formula": "SUM(R501A1) / SUM(R501A1 + R501A2 + R501B) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R501A1",
+          "label": "Jumlah keluarga pengguna listrik PLN",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R501A2",
+          "label": "Jumlah keluarga pengguna listrik Non PLN",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R501B",
+          "label": "Jumlah keluarga bukan pengguna listrik",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Cakupan listrik PLN terhadap keluarga yang tercatat pada blok 501",
+      "what_cannot_be_concluded": "Penyebut diturunkan dari tiga kategori pada Blok 501, bukan variabel jumlah keluarga R401c yang tidak didiseminasikan. Jangan menghitung rerata persentase desa; ini bukan ukuran keandalan, jam layanan, atau mutu listrik.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "I02",
+      "domain": "Infrastruktur",
+      "name": "Keluarga bukan pengguna listrik",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase keluarga bukan pengguna listrik",
+      "measure_type": "ratio_of_sums",
+      "unit_in_source": "%",
+      "calculation": "SUM(R501B) / SUM(R501A1 + R501A2 + R501B) × 100",
+      "source_variables": "R501A1, R501A2, R501B",
+      "interpretation": "Proporsi keluarga tanpa listrik",
+      "limitation": "Penyebut diturunkan dari tiga kategori pada Blok 501; jumlah keluarga merupakan proksi. Nilai tidak mengukur durasi, mutu, atau sebab ketiadaan listrik.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi keluarga tanpa listrik",
+      "operational_definition": "Menjumlahkan hitungan keluarga pada tiga kategori R501, lalu menghitung porsi kategori bukan pengguna listrik.",
+      "formula_readable": "(keluarga yang bukan pengguna listrik (Σ R501B)) ÷ (keluarga pada tiga kategori listrik: PLN + non-PLN + bukan pengguna) × 100%",
+      "numerator": "keluarga yang bukan pengguna listrik (Σ R501B)",
+      "denominator": "keluarga pada tiga kategori listrik: PLN + non-PLN + bukan pengguna",
+      "calculation_technical": "SUM(R501B) / SUM(R501A1 + R501A2 + R501B) × 100",
+      "research_catalog_formula": "SUM(R501B) / SUM(R501A1 + R501A2 + R501B) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R501A1",
+          "label": "Jumlah keluarga pengguna listrik PLN",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R501A2",
+          "label": "Jumlah keluarga pengguna listrik Non PLN",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R501B",
+          "label": "Jumlah keluarga bukan pengguna listrik",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi keluarga tanpa listrik",
+      "what_cannot_be_concluded": "Penyebut diturunkan dari tiga kategori pada Blok 501; jumlah keluarga merupakan proksi. Nilai tidak mengukur durasi, mutu, atau sebab ketiadaan listrik.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "I03",
+      "domain": "Infrastruktur",
+      "name": "Penerangan jalan utama sebagian besar",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa dengan penerangan jalan utama sebagian besar",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R502A = 1) / COUNT(desa) × 100",
+      "source_variables": "R502A",
+      "interpretation": "Proporsi desa dengan PJU di sebagian besar jalan utama",
+      "limitation": "Tidak mengukur tingkat terang, jam nyala, kondisi tiap ruas, atau keselamatan jalan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan PJU di sebagian besar jalan utama",
+      "operational_definition": "Satu desa masuk pembilang jika R502A berkode 1: penerangan ada di sebagian besar jalan utama.",
+      "formula_readable": "(desa dengan penerangan di sebagian besar jalan utama) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan penerangan di sebagian besar jalan utama",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R502A = 1) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R502A = 1) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R502A",
+          "label": "Penerangan di jalan utama desa/kelurahan",
+          "valid_values": "1 = ada, sebagian besar; 2 = ada, sebagian kecil; 3 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan PJU di sebagian besar jalan utama",
+      "what_cannot_be_concluded": "Tidak mengukur tingkat terang, jam nyala, kondisi tiap ruas, atau keselamatan jalan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "I03",
+        "name": "Penerangan jalan utama sebagian besar",
+        "domain": "Infrastruktur",
+        "urban": 74.2,
+        "rural": 40.9,
+        "province": 53.7,
+        "gap": 33.3
+      }
+    },
+    {
+      "code": "I04",
+      "domain": "Infrastruktur",
+      "name": "Bahan bakar memasak utama",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Bahan bakar memasak utama",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R503 = 4) / COUNT(desa) × 100",
+      "source_variables": "R503",
+      "interpretation": "Seluruh 393 desa berkode 4 (elpiji 3 kg)",
+      "limitation": "Kamus penelitian menandai indikator ini konstan/tidak informatif pada ekstrak. Nilai kelompok tidak dirilis pada tampilan ini; hasil tidak boleh digeneralisasi ke luar periode dan cakupan data.",
+      "readiness": "NOT_INFORMATIVE",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Seluruh 393 desa berkode 4 (elpiji 3 kg)",
+      "operational_definition": "Menghitung unit dengan kode kategori R503 = 4 sebagaimana aturan dalam kamus penelitian.",
+      "formula_readable": "(desa dengan bahan bakar memasak utama berkode 4 (elpiji 3 kg)) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan bahan bakar memasak utama berkode 4 (elpiji 3 kg)",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R503 = 4) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R503 = 4) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R503",
+          "label": "Bahan bakar untuk memasak sebagian besar keluarga",
+          "valid_values": "1 = listrik; 2 = elpiji 5,5 kg; 3 = elpiji 12 kg; 4 = elpiji 3 kg; 5 = gas kota; 6 = biogas; 7 = minyak tanah; 8 = briket; 9 = arang; 10 = kayu bakar; 11 = lainnya",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Seluruh 393 desa berkode 4 (elpiji 3 kg)",
+      "what_cannot_be_concluded": "Kamus penelitian menandai indikator ini konstan/tidak informatif pada ekstrak. Nilai kelompok tidak dirilis pada tampilan ini; hasil tidak boleh digeneralisasi ke luar periode dan cakupan data.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "E01",
+      "domain": "Pendidikan",
+      "name": "Desa memiliki SD",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa memiliki SD",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT((R701CK2 + R701CK3) > 0) / COUNT(desa) × 100",
+      "source_variables": "R701CK2, R701CK3",
+      "interpretation": "Proporsi desa dengan minimal satu SD (negeri atau swasta)",
+      "limitation": "Keberadaan sekolah tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan minimal satu SD (negeri atau swasta)",
+      "operational_definition": "Jumlah SD negeri dan swasta (R701CK2 + R701CK3) dijumlahkan per desa; desa dihitung jika hasilnya lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu SD negeri atau swasta) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu SD negeri atau swasta",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT((R701CK2 + R701CK3) > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT((R701CK2 + R701CK3) > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701CK2",
+          "label": "Jumlah SD negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701CK3",
+          "label": "Jumlah SD swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan minimal satu SD (negeri atau swasta)",
+      "what_cannot_be_concluded": "Keberadaan sekolah tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "E02",
+      "domain": "Pendidikan",
+      "name": "Desa memiliki SMP",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki SMP",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT((R701EK2 + R701EK3) > 0) / COUNT(desa) × 100",
+      "source_variables": "R701EK2, R701EK3",
+      "interpretation": "Proporsi desa dengan minimal satu SMP (negeri atau swasta)",
+      "limitation": "Keberadaan SMP tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan minimal satu SMP (negeri atau swasta)",
+      "operational_definition": "Jumlah SMP negeri dan swasta (R701EK2 + R701EK3) dijumlahkan per desa; desa dihitung jika hasilnya lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu SMP negeri atau swasta) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu SMP negeri atau swasta",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT((R701EK2 + R701EK3) > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT((R701EK2 + R701EK3) > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701EK2",
+          "label": "Jumlah SMP negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701EK3",
+          "label": "Jumlah SMP swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan minimal satu SMP (negeri atau swasta)",
+      "what_cannot_be_concluded": "Keberadaan SMP tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "E02",
+        "name": "Desa memiliki SMP",
+        "domain": "Pendidikan",
+        "urban": 58.9,
+        "rural": 40.1,
+        "province": 47.3,
+        "gap": 18.9
+      }
+    },
+    {
+      "code": "E03",
+      "domain": "Pendidikan",
+      "name": "Desa memiliki SMA",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki SMA",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT((R701GK2 + R701GK3) > 0) / COUNT(desa) × 100",
+      "source_variables": "R701GK2, R701GK3",
+      "interpretation": "Proporsi desa dengan minimal satu SMA (negeri atau swasta)",
+      "limitation": "Keberadaan SMA tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan minimal satu SMA (negeri atau swasta)",
+      "operational_definition": "Jumlah SMA negeri dan swasta (R701GK2 + R701GK3) dijumlahkan per desa; desa dihitung jika hasilnya lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu SMA negeri atau swasta) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu SMA negeri atau swasta",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT((R701GK2 + R701GK3) > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT((R701GK2 + R701GK3) > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701GK2",
+          "label": "Jumlah SMA negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701GK3",
+          "label": "Jumlah SMA swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan minimal satu SMA (negeri atau swasta)",
+      "what_cannot_be_concluded": "Keberadaan SMA tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "E03",
+        "name": "Desa memiliki SMA",
+        "domain": "Pendidikan",
+        "urban": 31.1,
+        "rural": 7.9,
+        "province": 16.8,
+        "gap": 23.3
+      }
+    },
+    {
+      "code": "E04",
+      "domain": "Pendidikan",
+      "name": "Desa memiliki SMK",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki SMK",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT((R701IK2 + R701IK3) > 0) / COUNT(desa) × 100",
+      "source_variables": "R701IK2, R701IK3",
+      "interpretation": "Proporsi desa dengan minimal satu SMK (negeri atau swasta)",
+      "limitation": "Keberadaan SMK tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan minimal satu SMK (negeri atau swasta)",
+      "operational_definition": "Jumlah SMK negeri dan swasta (R701IK2 + R701IK3) dijumlahkan per desa; desa dihitung jika hasilnya lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu SMK negeri atau swasta) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu SMK negeri atau swasta",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT((R701IK2 + R701IK3) > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT((R701IK2 + R701IK3) > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701IK2",
+          "label": "Jumlah SMK negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701IK3",
+          "label": "Jumlah SMK swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan minimal satu SMK (negeri atau swasta)",
+      "what_cannot_be_concluded": "Keberadaan SMK tidak menyatakan daya tampung, mutu, jumlah murid, jarak tempuh, atau keterjangkauan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "E04",
+        "name": "Desa memiliki SMK",
+        "domain": "Pendidikan",
+        "urban": 21.9,
+        "rural": 7.0,
+        "province": 12.7,
+        "gap": 14.8
+      }
+    },
+    {
+      "code": "E05",
+      "domain": "Pendidikan",
+      "name": "Jumlah sekolah SD sampai SMA/SMK",
+      "unit": "unit",
+      "published": false,
+      "formal_name": "Jumlah sekolah SD–SMA/SMK",
+      "measure_type": "total",
+      "unit_in_source": "unit",
+      "calculation": "SUM(R701CK2..R701IK3, 8 kolom)",
+      "source_variables": "R701CK2, R701CK3, R701EK2, R701EK3, R701GK2, R701GK3, R701IK2, R701IK3",
+      "interpretation": "Banyaknya satuan pendidikan dasar–menengah yang berlokasi di desa",
+      "limitation": "Bukan jumlah murid, rombongan belajar, kapasitas, atau mutu sekolah. Unit yang berlokasi di satu desa tidak dihitung ulang sebagai sekolah di desa lain.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "unit",
+      "plain_language": "Banyaknya satuan pendidikan dasar–menengah yang berlokasi di desa",
+      "operational_definition": "Menjumlahkan delapan kolom hitungan sekolah; setiap satuan pendidikan dihitung di desa tempatnya tercatat.",
+      "formula_readable": "jumlah total: unit SD negeri/swasta, SMP negeri/swasta, SMA negeri/swasta, dan SMK negeri/swasta yang tercatat",
+      "numerator": "unit SD negeri/swasta, SMP negeri/swasta, SMA negeri/swasta, dan SMK negeri/swasta yang tercatat",
+      "denominator": "Tidak berlaku; ukuran jumlah total",
+      "calculation_technical": "SUM(R701CK2..R701IK3, 8 kolom)",
+      "research_catalog_formula": "SUM(R701CK2..R701IK3, 8 kolom)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701CK2",
+          "label": "Jumlah SD negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701CK3",
+          "label": "Jumlah SD swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701EK2",
+          "label": "Jumlah SMP negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701EK3",
+          "label": "Jumlah SMP swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701GK2",
+          "label": "Jumlah SMA negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701GK3",
+          "label": "Jumlah SMA swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701IK2",
+          "label": "Jumlah SMK negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701IK3",
+          "label": "Jumlah SMK swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Banyaknya satuan pendidikan dasar–menengah yang berlokasi di desa",
+      "what_cannot_be_concluded": "Bukan jumlah murid, rombongan belajar, kapasitas, atau mutu sekolah. Unit yang berlokasi di satu desa tidak dihitung ulang sebagai sekolah di desa lain.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "E06",
+      "domain": "Pendidikan",
+      "name": "Jarak ke SMP untuk desa tanpa SMP",
+      "unit": "km",
+      "published": false,
+      "formal_name": "Rata-rata jarak ke SMP terdekat (desa tanpa SMP)",
+      "measure_type": "mean_among",
+      "unit_in_source": "km",
+      "calculation": "MEAN(R701EK4) untuk desa dengan R701EK2 + R701EK3 = 0",
+      "source_variables": "R701EK4, R701EK2, R701EK3",
+      "interpretation": "Keterjangkauan SMP bagi desa yang tidak memilikinya",
+      "limitation": "Hanya berlaku untuk subkelompok tanpa SMP. Jarak bukan waktu tempuh, kondisi rute, ongkos, atau mutu pendidikan; nol karena aturan lompatan bukan jarak nol.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "km",
+      "plain_language": "Keterjangkauan SMP bagi desa yang tidak memilikinya",
+      "operational_definition": "Menghitung rata-rata R701EK4 hanya pada desa dengan R701EK2 + R701EK3 = 0; kode nol pada desa yang memiliki SMP berarti tidak berlaku.",
+      "formula_readable": "total jarak ke SMP terdekat pada desa yang tidak memiliki SMP pada kelompok yang memenuhi syarat ÷ jumlah desa tanpa SMP dengan jarak terukur",
+      "numerator": "jarak ke SMP terdekat pada desa yang tidak memiliki SMP",
+      "denominator": "jumlah desa tanpa SMP dengan jarak terukur",
+      "calculation_technical": "MEAN(R701EK4) untuk desa dengan R701EK2 + R701EK3 = 0",
+      "research_catalog_formula": "MEAN(R701EK4) untuk desa dengan R701EK2 + R701EK3 = 0",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701EK4",
+          "label": "Jika tidak ada [kolom (2) dan kolom (3) terisi 0], jarak ke SMP terdekat",
+          "valid_values": "Numeric km, one decimal; 0 encodes NOT APPLICABLE",
+          "skip_rule": "MEASURED only when: R701EK2+R701EK3 == 0"
+        },
+        {
+          "code": "R701EK2",
+          "label": "Jumlah SMP negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701EK3",
+          "label": "Jumlah SMP swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Keterjangkauan SMP bagi desa yang tidak memilikinya",
+      "what_cannot_be_concluded": "Hanya berlaku untuk subkelompok tanpa SMP. Jarak bukan waktu tempuh, kondisi rute, ongkos, atau mutu pendidikan; nol karena aturan lompatan bukan jarak nol.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "E07",
+      "domain": "Pendidikan",
+      "name": "Akses SMP sulit atau sangat sulit",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa tanpa SMP yang aksesnya sulit/sangat sulit",
+      "measure_type": "share_among",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R701EK5 IN {3,4}) / COUNT(R701EK2 + R701EK3 = 0) × 100",
+      "source_variables": "R701EK5, R701EK2, R701EK3",
+      "interpretation": "Kesulitan akses SMP bagi desa tanpa SMP",
+      "limitation": "Bukan proporsi dari seluruh desa. Kategori kesulitan bukan waktu tempuh, biaya, frekuensi perjalanan, atau mutu sekolah.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Kesulitan akses SMP bagi desa tanpa SMP",
+      "operational_definition": "Pembilang adalah desa tanpa SMP dengan R701EK5 berkode 3 atau 4; penyebut hanya desa tanpa SMP.",
+      "formula_readable": "(desa tanpa SMP yang aksesnya dikodekan sulit atau sangat sulit) ÷ (seluruh desa tanpa SMP) × 100%",
+      "numerator": "desa tanpa SMP yang aksesnya dikodekan sulit atau sangat sulit",
+      "denominator": "seluruh desa tanpa SMP",
+      "calculation_technical": "COUNT(R701EK5 IN {3,4}) / COUNT(R701EK2 + R701EK3 = 0) × 100",
+      "research_catalog_formula": "COUNT(R701EK5 IN {3,4}) / COUNT(R701EK2 + R701EK3 = 0) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701EK5",
+          "label": "Jika tidak ada [kolom (2) dan kolom (3) terisi 0], kemudahan untuk mencapai ke SMP",
+          "valid_values": "1 = sangat mudah; 2 = mudah; 3 = sulit; 4 = sangat sulit",
+          "skip_rule": "MEASURED only when: R701EK2+R701EK3 == 0"
+        },
+        {
+          "code": "R701EK2",
+          "label": "Jumlah SMP negeri",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R701EK3",
+          "label": "Jumlah SMP swasta",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Kesulitan akses SMP bagi desa tanpa SMP",
+      "what_cannot_be_concluded": "Bukan proporsi dari seluruh desa. Kategori kesulitan bukan waktu tempuh, biaya, frekuensi perjalanan, atau mutu sekolah.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "E08",
+      "domain": "Pendidikan",
+      "name": "Jarak ke SD untuk desa tanpa SD",
+      "unit": "km",
+      "published": false,
+      "formal_name": "Jarak ke SD terdekat (desa tanpa SD)",
+      "measure_type": "mean_among",
+      "unit_in_source": "km",
+      "calculation": "MEAN(R701CK4) untuk desa dengan R701CK2 + R701CK3 = 0",
+      "source_variables": "R701CK4",
+      "interpretation": "Keterjangkauan SD bagi desa tanpa SD",
+      "limitation": "Berlaku pada subkelompok kecil (kamus penelitian mencatat lima desa relevan); rerata dapat berubah karena sedikit unit. Jarak bukan waktu tempuh atau mutu SD.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "km",
+      "plain_language": "Keterjangkauan SD bagi desa tanpa SD",
+      "operational_definition": "Menghitung rata-rata R701CK4 hanya pada desa dengan R701CK2 + R701CK3 = 0.",
+      "formula_readable": "total jarak ke SD terdekat pada desa yang tidak memiliki SD pada kelompok yang memenuhi syarat ÷ jumlah desa tanpa SD dengan jarak terukur",
+      "numerator": "jarak ke SD terdekat pada desa yang tidak memiliki SD",
+      "denominator": "jumlah desa tanpa SD dengan jarak terukur",
+      "calculation_technical": "MEAN(R701CK4) untuk desa dengan R701CK2 + R701CK3 = 0",
+      "research_catalog_formula": "MEAN(R701CK4) untuk desa dengan R701CK2 + R701CK3 = 0",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R701CK4",
+          "label": "Jika tidak ada [kolom (2) dan kolom (3) terisi 0], jarak ke SD terdekat",
+          "valid_values": "Numeric km, one decimal; 0 encodes NOT APPLICABLE",
+          "skip_rule": "MEASURED only when: R701CK2+R701CK3 == 0"
+        }
+      ],
+      "interpretation_guidance": "Keterjangkauan SD bagi desa tanpa SD",
+      "what_cannot_be_concluded": "Berlaku pada subkelompok kecil (kamus penelitian mencatat lima desa relevan); rerata dapat berubah karena sedikit unit. Jarak bukan waktu tempuh atau mutu SD.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "H01",
+      "domain": "Kesehatan",
+      "name": "Desa memiliki rumah sakit",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa memiliki rumah sakit",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R702AK2 > 0) / COUNT(desa) × 100",
+      "source_variables": "R702AK2",
+      "interpretation": "Proporsi desa dengan rumah sakit",
+      "limitation": "Tidak mengukur kapasitas tempat tidur, jenis layanan, mutu, waktu tunggu, atau jarak penduduk ke rumah sakit.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan rumah sakit",
+      "operational_definition": "Satu desa masuk pembilang jika hitungan rumah sakit R702AK2 lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu rumah sakit) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu rumah sakit",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R702AK2 > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R702AK2 > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R702AK2",
+          "label": "Jumlah rumah sakit",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan rumah sakit",
+      "what_cannot_be_concluded": "Tidak mengukur kapasitas tempat tidur, jenis layanan, mutu, waktu tunggu, atau jarak penduduk ke rumah sakit.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "H02",
+      "domain": "Kesehatan",
+      "name": "Desa memiliki puskesmas",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki puskesmas",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT((R702DK2 + R702EK2) > 0) / COUNT(desa) × 100",
+      "source_variables": "R702DK2, R702EK2",
+      "interpretation": "Proporsi desa dengan puskesmas (rawat inap atau tidak)",
+      "limitation": "Tidak mengukur kapasitas, tenaga kesehatan, mutu, jam layanan, pemanfaatan, atau keterjangkauan penduduk.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan puskesmas (rawat inap atau tidak)",
+      "operational_definition": "Jumlah puskesmas rawat inap dan non-rawat inap (R702DK2 + R702EK2) dihitung per desa; desa masuk jika jumlahnya lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu puskesmas, rawat inap atau non-rawat inap) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu puskesmas, rawat inap atau non-rawat inap",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT((R702DK2 + R702EK2) > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT((R702DK2 + R702EK2) > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R702DK2",
+          "label": "Jumlah puskesmas dengan rawat inap",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R702EK2",
+          "label": "Jumlah puskesmas tanpa rawat inap",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan puskesmas (rawat inap atau tidak)",
+      "what_cannot_be_concluded": "Tidak mengukur kapasitas, tenaga kesehatan, mutu, jam layanan, pemanfaatan, atau keterjangkauan penduduk.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "H02",
+        "name": "Desa memiliki puskesmas",
+        "domain": "Kesehatan",
+        "urban": 26.5,
+        "rural": 10.3,
+        "province": 16.5,
+        "gap": 16.2
+      }
+    },
+    {
+      "code": "H03",
+      "domain": "Kesehatan",
+      "name": "Desa memiliki apotek",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki apotek",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R702LK2 > 0) / COUNT(desa) × 100",
+      "source_variables": "R702LK2",
+      "interpretation": "Proporsi desa dengan apotek",
+      "limitation": "Tidak mengukur ketersediaan stok/obat, jam buka, mutu layanan, harga, atau kemudahan akses penduduk.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa dengan apotek",
+      "operational_definition": "Satu desa masuk pembilang jika hitungan apotek R702LK2 lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu apotek) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu apotek",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R702LK2 > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R702LK2 > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R702LK2",
+          "label": "Jumlah apotek",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa dengan apotek",
+      "what_cannot_be_concluded": "Tidak mengukur ketersediaan stok/obat, jam buka, mutu layanan, harga, atau kemudahan akses penduduk.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "H03",
+        "name": "Desa memiliki apotek",
+        "domain": "Kesehatan",
+        "urban": 74.8,
+        "rural": 12.4,
+        "province": 36.4,
+        "gap": 62.4
+      }
+    },
+    {
+      "code": "H04",
+      "domain": "Kesehatan",
+      "name": "Rata-rata posyandu aktif per desa",
+      "unit": "unit/desa",
+      "published": false,
+      "formal_name": "Rata-rata posyandu aktif per desa",
+      "measure_type": "mean_per_village",
+      "unit_in_source": "unit/desa",
+      "calculation": "SUM(R703A) / COUNT(desa)",
+      "source_variables": "R703A",
+      "interpretation": "Ketersediaan layanan kesehatan berbasis masyarakat",
+      "limitation": "Bukan jumlah posyandu per penduduk atau per balita; jumlah penduduk/balita tidak tersedia dalam paket. Rerata tidak menunjukkan pemerataan antar desa.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "unit/desa",
+      "plain_language": "Ketersediaan layanan kesehatan berbasis masyarakat",
+      "operational_definition": "Jumlah R703A dibagi jumlah unit desa/kelurahan.",
+      "formula_readable": "total jumlah posyandu aktif yang tercatat di seluruh desa ÷ jumlah desa/kelurahan dalam cakupan",
+      "numerator": "jumlah posyandu aktif yang tercatat di seluruh desa",
+      "denominator": "jumlah desa/kelurahan dalam cakupan",
+      "calculation_technical": "SUM(R703A) / COUNT(desa)",
+      "research_catalog_formula": "SUM(R703A) / COUNT(desa)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R703A",
+          "label": "Jumlah posyandu aktif",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Ketersediaan layanan kesehatan berbasis masyarakat",
+      "what_cannot_be_concluded": "Bukan jumlah posyandu per penduduk atau per balita; jumlah penduduk/balita tidak tersedia dalam paket. Rerata tidak menunjukkan pemerataan antar desa.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "T01",
+      "domain": "Transportasi",
+      "name": "Desa dengan akses darat",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa dengan akses darat",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R801A IN {1,3}) / COUNT(desa) × 100",
+      "source_variables": "R801A",
+      "interpretation": "Proporsi desa yang dapat dicapai lewat darat",
+      "limitation": "Tidak mengukur kondisi jalan, waktu tempuh, keterhubungan sepanjang tahun, atau mutu akses. Kategori gabungan darat-air tetap masuk pembilang.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Proporsi desa yang dapat dicapai lewat darat",
+      "operational_definition": "Satu desa masuk pembilang jika R801A berkode 1 (darat) atau 3 (darat dan air).",
+      "formula_readable": "(desa yang lalu lintasnya dapat melalui darat, termasuk gabungan darat dan air) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa yang lalu lintasnya dapat melalui darat, termasuk gabungan darat dan air",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R801A IN {1,3}) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R801A IN {1,3}) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R801A",
+          "label": "Lalu lintas dari/ke desa/kelurahan melalui",
+          "valid_values": "1 = darat; 2 = air; 3 = darat dan air; 4 = udara",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Proporsi desa yang dapat dicapai lewat darat",
+      "what_cannot_be_concluded": "Tidak mengukur kondisi jalan, waktu tempuh, keterhubungan sepanjang tahun, atau mutu akses. Kategori gabungan darat-air tetap masuk pembilang.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "T02",
+      "domain": "Transportasi",
+      "name": "Akses darat dengan jalan aspal/beton",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa akses darat dengan jalan aspal/beton",
+      "measure_type": "share_among",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R801B1 = 1) / COUNT(R801A IN {1,3}) × 100",
+      "source_variables": "R801B1, R801A",
+      "interpretation": "Kualitas permukaan jalan utama",
+      "limitation": "Bukan persentase dari semua desa. Tidak mengukur panjang bagian beraspal, kondisi/kemantapan jalan, atau akses sepanjang tahun.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Kualitas permukaan jalan utama",
+      "operational_definition": "Pembilang memakai R801B1 = 1; penyebut hanya unit dengan R801A = 1 atau 3 sesuai aturan lompatan.",
+      "formula_readable": "(desa berakses darat dengan jalan utama berpermukaan aspal/beton) ÷ (desa dengan lalu lintas darat atau darat dan air) × 100%",
+      "numerator": "desa berakses darat dengan jalan utama berpermukaan aspal/beton",
+      "denominator": "desa dengan lalu lintas darat atau darat dan air",
+      "calculation_technical": "COUNT(R801B1 = 1) / COUNT(R801A IN {1,3}) × 100",
+      "research_catalog_formula": "COUNT(R801B1 = 1) / COUNT(R801A IN {1,3}) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R801B1",
+          "label": "Jika lalu lintas dari/ke desa/kelurahan melalui darat atau darat dan air",
+          "valid_values": "1 = aspal/beton; 2 = diperkeras (kerikil, batu, dll.); 3 = tanah; 4 = lainnya (jalan setapak, kayu/papan, dll)",
+          "skip_rule": "MEASURED only when: R801A in [1, 3]"
+        },
+        {
+          "code": "R801A",
+          "label": "Lalu lintas dari/ke desa/kelurahan melalui",
+          "valid_values": "1 = darat; 2 = air; 3 = darat dan air; 4 = udara",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Kualitas permukaan jalan utama",
+      "what_cannot_be_concluded": "Bukan persentase dari semua desa. Tidak mengukur panjang bagian beraspal, kondisi/kemantapan jalan, atau akses sepanjang tahun.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "T03",
+      "domain": "Transportasi",
+      "name": "Angkutan umum trayek tetap",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa dengan angkutan umum trayek tetap",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT('A' IN R801C1) / COUNT(desa) × 100",
+      "source_variables": "R801C1",
+      "interpretation": "Keberadaan angkutan umum dengan trayek tetap",
+      "limitation": "Tidak mengukur jumlah trayek/kendaraan, frekuensi, tarif, kapasitas, atau kualitas layanan. Kategori A dan B dapat muncul bersama dan tidak boleh dijumlahkan sebagai kelompok terpisah.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Keberadaan angkutan umum dengan trayek tetap",
+      "operational_definition": "Satu desa dihitung jika kode multirespons R801C1 memuat huruf A; kode AB dihitung satu kali.",
+      "formula_readable": "(desa yang mencatat angkutan umum dengan trayek tetap) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa yang mencatat angkutan umum dengan trayek tetap",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT('A' IN R801C1) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT('A' IN R801C1) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R801C1",
+          "label": "Keberadaan angkutan umum",
+          "valid_values": "A = ada, dengan trayek tetap; B = ada, tanpa trayek tetap; X = tidak ada angkutan umum (kombinasi diperbolehkan, mis. AB)",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Keberadaan angkutan umum dengan trayek tetap",
+      "what_cannot_be_concluded": "Tidak mengukur jumlah trayek/kendaraan, frekuensi, tarif, kapasitas, atau kualitas layanan. Kategori A dan B dapat muncul bersama dan tidak boleh dijumlahkan sebagai kelompok terpisah.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "T03",
+        "name": "Angkutan umum trayek tetap",
+        "domain": "Transportasi",
+        "urban": 76.8,
+        "rural": 77.7,
+        "province": 77.4,
+        "gap": -0.9
+      }
+    },
+    {
+      "code": "D01",
+      "domain": "Digital",
+      "name": "Sebagian besar warga menggunakan HP",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa: sebagian besar warga memakai HP",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R803B = 1) / COUNT(desa) × 100",
+      "source_variables": "R803B",
+      "interpretation": "Adopsi telepon seluler",
+      "limitation": "Kategori desa ini bukan persentase individu/keluarga pemilik HP atau pengguna aktif. Kamus penelitian menandai variasi indikator hampir konstan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Adopsi telepon seluler",
+      "operational_definition": "Satu desa masuk pembilang jika R803B berkode 1 (sebagian besar warga).",
+      "formula_readable": "(desa dengan kategori sebagian besar warga menggunakan HP) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan kategori sebagian besar warga menggunakan HP",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R803B = 1) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R803B = 1) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R803B",
+          "label": "Keberadaan warga yang menggunakan telepon seluler/handphone",
+          "valid_values": "1 = sebagian besar warga; 2 = sebagian kecil warga; 3 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Adopsi telepon seluler",
+      "what_cannot_be_concluded": "Kategori desa ini bukan persentase individu/keluarga pemilik HP atau pengguna aktif. Kamus penelitian menandai variasi indikator hampir konstan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "D02",
+      "domain": "Digital",
+      "name": "Sinyal HP kuat atau sangat kuat",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa dengan sinyal HP kuat/sangat kuat",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R804C IN {1,2}) / COUNT(desa) × 100",
+      "source_variables": "R804C",
+      "interpretation": "Kualitas sinyal seluler",
+      "limitation": "Tidak mengukur kualitas pada setiap titik, kecepatan internet, kestabilan, cakupan dalam ruang, atau penggunaan oleh warga.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Kualitas sinyal seluler",
+      "operational_definition": "Satu desa masuk pembilang jika R804C berkode 1 (sangat kuat) atau 2 (kuat).",
+      "formula_readable": "(desa dengan sinyal seluler kuat atau sangat kuat pada sebagian besar wilayah) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sinyal seluler kuat atau sangat kuat pada sebagian besar wilayah",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R804C IN {1,2}) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R804C IN {1,2}) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R804C",
+          "label": "Sinyal telepon seluler/handphone di sebagian besar wilayah desa/kelurahan",
+          "valid_values": "1 = sinyal sangat kuat; 2 = sinyal kuat; 3 = sinyal lemah; 4 = tidak ada sinyal",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Kualitas sinyal seluler",
+      "what_cannot_be_concluded": "Tidak mengukur kualitas pada setiap titik, kecepatan internet, kestabilan, cakupan dalam ruang, atau penggunaan oleh warga.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "D03",
+      "domain": "Digital",
+      "name": "Sinyal internet 4G/5G",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa dengan sinyal internet 4G/5G",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R804D = 1) / COUNT(desa) × 100",
+      "source_variables": "R804D",
+      "interpretation": "Ketersediaan internet seluler cepat",
+      "limitation": "Tidak mengukur kecepatan, kapasitas, biaya, penggunaan, atau cakupan setiap lokasi. Kamus variabel mencatat aturan lompatan saat tidak ada sinyal seluler.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Ketersediaan internet seluler cepat",
+      "operational_definition": "Satu desa masuk pembilang jika R804D berkode 1 (5G/4G/LTE).",
+      "formula_readable": "(desa dengan sinyal internet seluler 4G/5G pada sebagian besar wilayah) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sinyal internet seluler 4G/5G pada sebagian besar wilayah",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R804D = 1) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R804D = 1) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R804D",
+          "label": "Sinyal internet telepon seluler/handphone di sebagian besar wilayah di desa/kelurahan",
+          "valid_values": "1 = 5G/4G/LTE; 2 = 3G/H/H+/EVDO; 3 = 2,5G/E/GPRS; 4 = tidak ada sinyal internet",
+          "skip_rule": "Questionnaire skips this item when R804C = 4; that gate value never occurs in this extract (observed [1, 2]), so the item is measured for all 393 rows"
+        }
+      ],
+      "interpretation_guidance": "Ketersediaan internet seluler cepat",
+      "what_cannot_be_concluded": "Tidak mengukur kecepatan, kapasitas, biaya, penggunaan, atau cakupan setiap lokasi. Kamus variabel mencatat aturan lompatan saat tidak ada sinyal seluler.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "D04",
+      "domain": "Digital",
+      "name": "Jumlah menara BTS",
+      "unit": "unit",
+      "published": false,
+      "formal_name": "Jumlah menara BTS",
+      "measure_type": "total",
+      "unit_in_source": "unit",
+      "calculation": "SUM(R804A)",
+      "source_variables": "R804A",
+      "interpretation": "Banyaknya menara BTS di wilayah",
+      "limitation": "Bukan ukuran pelanggan, jangkauan sinyal, kapasitas jaringan, jumlah operator, atau layanan aktif.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "unit",
+      "plain_language": "Banyaknya menara BTS di wilayah",
+      "operational_definition": "Menjumlahkan hitungan menara BTS R804A di seluruh unit wilayah.",
+      "formula_readable": "jumlah total: menara Base Transceiver Station (BTS) yang tercatat pada desa dalam cakupan",
+      "numerator": "menara Base Transceiver Station (BTS) yang tercatat pada desa dalam cakupan",
+      "denominator": "Tidak berlaku; ukuran jumlah total",
+      "calculation_technical": "SUM(R804A)",
+      "research_catalog_formula": "SUM(R804A)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R804A",
+          "label": "Jumlah menara Base Transceiver Station (BTS)",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Banyaknya menara BTS di wilayah",
+      "what_cannot_be_concluded": "Bukan ukuran pelanggan, jangkauan sinyal, kapasitas jaringan, jumlah operator, atau layanan aktif.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "C01",
+      "domain": "Ekonomi",
+      "name": "Desa memiliki kantor bank",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa memiliki kantor bank",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT((R902A1 + R902A2) > 0) / COUNT(desa) × 100",
+      "source_variables": "R902A1, R902A2",
+      "interpretation": "Akses layanan perbankan formal",
+      "limitation": "Jumlah per desa bukan jumlah bank unik di kabupaten/kota karena bank yang sama dapat beroperasi di lebih dari satu desa. Tidak mengukur rekening atau pemanfaatan layanan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Akses layanan perbankan formal",
+      "operational_definition": "Hitungan R902A1 dan R902A2 dijumlahkan per desa; desa masuk jika jumlahnya lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu bank umum pemerintah atau swasta) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu bank umum pemerintah atau swasta",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT((R902A1 + R902A2) > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT((R902A1 + R902A2) > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R902A1",
+          "label": "Jumlah bank yang beroperasi di desa/kelurahan: Bank Umum Pemerintah (BRI, BNI, Mandiri, BPD, BTN)",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R902A2",
+          "label": "Jumlah bank yang beroperasi di desa/kelurahan: Bank Umum Swasta (BCA, Permata, Sinarmas, CIMB, dll)",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Akses layanan perbankan formal",
+      "what_cannot_be_concluded": "Jumlah per desa bukan jumlah bank unik di kabupaten/kota karena bank yang sama dapat beroperasi di lebih dari satu desa. Tidak mengukur rekening atau pemanfaatan layanan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "C02",
+      "domain": "Ekonomi",
+      "name": "Jumlah koperasi aktif",
+      "unit": "unit",
+      "published": false,
+      "formal_name": "Jumlah koperasi aktif",
+      "measure_type": "total",
+      "unit_in_source": "unit",
+      "calculation": "SUM(R903A..R903D)",
+      "source_variables": "R903A, R903B, R903C, R903D",
+      "interpretation": "Banyaknya koperasi aktif",
+      "limitation": "Tidak mengukur jumlah anggota, transaksi, kesehatan usaha, cakupan layanan, atau koperasi yang tidak tercatat pada empat kategori.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "unit",
+      "plain_language": "Banyaknya koperasi aktif",
+      "operational_definition": "Menjumlahkan hitungan R903A sampai R903D untuk seluruh desa dalam cakupan.",
+      "formula_readable": "jumlah total: koperasi aktif pada empat kategori yang tercatat (KUD, Kopinkra/Usaha mikro, KSP/Kospin, dan lainnya)",
+      "numerator": "koperasi aktif pada empat kategori yang tercatat (KUD, Kopinkra/Usaha mikro, KSP/Kospin, dan lainnya)",
+      "denominator": "Tidak berlaku; ukuran jumlah total",
+      "calculation_technical": "SUM(R903A..R903D)",
+      "research_catalog_formula": "SUM(R903A..R903D)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R903A",
+          "label": "Jumlah koperasi di desa/kelurahan yang masih aktif : Koperasi Unit Desa (KUD)",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R903B",
+          "label": "Jumlah koperasi di desa/kelurahan yang masih aktif : Koperasi Industri Kecil dan Kerajinan Rakyat (Kopinkra)/Usaha mikro",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R903C",
+          "label": "Jumlah koperasi di desa/kelurahan yang masih aktif : Koperasi Simpan Pinjam (KSP/Kospin)",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R903D",
+          "label": "Jumlah koperasi di desa/kelurahan yang masih aktif : Koperasi lainnya",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Banyaknya koperasi aktif",
+      "what_cannot_be_concluded": "Tidak mengukur jumlah anggota, transaksi, kesehatan usaha, cakupan layanan, atau koperasi yang tidak tercatat pada empat kategori.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "C03",
+      "domain": "Ekonomi",
+      "name": "Warga menerima fasilitas kredit",
+      "unit": "%",
+      "published": false,
+      "formal_name": "Persentase desa yang warganya menerima fasilitas kredit (jenis apa pun)",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(ANY(R904A..R904D = 1)) / COUNT(desa) × 100",
+      "source_variables": "R904A, R904B, R904C, R904D",
+      "interpretation": "Keterjangkauan kredit",
+      "limitation": "Bukan persentase keluarga/penerima, nilai pinjaman, akses seluruh warga, kelancaran pembayaran, atau dampak kredit. Empat kategori tidak boleh dijumlahkan karena satu desa dapat memiliki beberapa jenis.",
+      "readiness": "NEEDS_TRANSFORMATION",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "%",
+      "plain_language": "Keterjangkauan kredit",
+      "operational_definition": "Desa masuk pembilang jika setidaknya satu dari R904A–R904D berkode 1; logika OR mencegah hitung ganda.",
+      "formula_readable": "(desa yang mencatat sekurangnya satu jenis fasilitas kredit yang ditanyakan) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa yang mencatat sekurangnya satu jenis fasilitas kredit yang ditanyakan",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(ANY(R904A..R904D = 1)) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(ANY(R904A..R904D = 1)) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R904A",
+          "label": "Fasilitas kredit yang diterima warga desa/kelurahan selama setahun terakhir: Kredit Usaha Rakyat (KUR)",
+          "valid_values": "1 = ada; 2 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R904B",
+          "label": "Fasilitas kredit yang diterima warga desa/kelurahan selama setahun terakhir: Kredit Ketahanan Pangan dan Energi (KPP-E)",
+          "valid_values": "1 = ada; 2 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R904C",
+          "label": "Fasilitas kredit yang diterima warga desa/kelurahan selama setahun terakhir: Kredit Usaha Kecil (KUK)",
+          "valid_values": "1 = ada; 2 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R904D",
+          "label": "Fasilitas kredit yang diterima warga desa/kelurahan selama setahun terakhir: Kelompok Usaha Bersama (KUBE)",
+          "valid_values": "1 = ada; 2 = tidak ada",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Keterjangkauan kredit",
+      "what_cannot_be_concluded": "Bukan persentase keluarga/penerima, nilai pinjaman, akses seluruh warga, kelancaran pembayaran, atau dampak kredit. Empat kategori tidak boleh dijumlahkan karena satu desa dapat memiliki beberapa jenis.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "C04",
+      "domain": "Ekonomi",
+      "name": "Desa memiliki pasar permanen",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki pasar permanen",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R905BK2 > 0) / COUNT(desa) × 100",
+      "source_variables": "R905BK2",
+      "interpretation": "Keberadaan pasar dengan bangunan permanen",
+      "limitation": "Tidak mengukur jumlah pedagang, aktivitas, ketersediaan barang, harga, mutu layanan, atau akses penduduk. Fasilitas ini juga beririsan dengan kriteria resmi klasifikasi; gunakan sebagai profil, bukan penjelas status.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Keberadaan pasar dengan bangunan permanen",
+      "operational_definition": "Satu desa masuk pembilang jika hitungan pasar permanen R905BK2 lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu pasar berbangunan permanen) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu pasar berbangunan permanen",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R905BK2 > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R905BK2 > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R905BK2",
+          "label": "Jumlah pasar dengan bangunan permanen",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Keberadaan pasar dengan bangunan permanen",
+      "what_cannot_be_concluded": "Tidak mengukur jumlah pedagang, aktivitas, ketersediaan barang, harga, mutu layanan, atau akses penduduk. Fasilitas ini juga beririsan dengan kriteria resmi klasifikasi; gunakan sebagai profil, bukan penjelas status.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "C04",
+        "name": "Desa memiliki pasar permanen",
+        "domain": "Ekonomi",
+        "urban": 24.5,
+        "rural": 7.0,
+        "province": 13.7,
+        "gap": 17.5
+      }
+    },
+    {
+      "code": "C05",
+      "domain": "Ekonomi",
+      "name": "Desa memiliki minimarket/swalayan",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa memiliki minimarket/swalayan",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R905EK2 > 0) / COUNT(desa) × 100",
+      "source_variables": "R905EK2",
+      "interpretation": "Keberadaan ritel modern",
+      "limitation": "Tidak mengukur jumlah pelanggan, keterjangkauan harga, pilihan barang, mutu layanan, atau seluruh bentuk perdagangan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Keberadaan ritel modern",
+      "operational_definition": "Satu desa masuk pembilang jika hitungan R905EK2 lebih dari nol.",
+      "formula_readable": "(desa dengan sekurangnya satu minimarket/swalayan/supermarket) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa dengan sekurangnya satu minimarket/swalayan/supermarket",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R905EK2 > 0) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R905EK2 > 0) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R905EK2",
+          "label": "Jumlah minimarket/swalayan/supermarket",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Keberadaan ritel modern",
+      "what_cannot_be_concluded": "Tidak mengukur jumlah pelanggan, keterjangkauan harga, pilihan barang, mutu layanan, atau seluruh bentuk perdagangan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "C05",
+        "name": "Desa memiliki minimarket/swalayan",
+        "domain": "Ekonomi",
+        "urban": 84.1,
+        "rural": 23.6,
+        "province": 46.8,
+        "gap": 60.6
+      }
+    },
+    {
+      "code": "C06",
+      "domain": "Ekonomi",
+      "name": "Jumlah hotel dan penginapan",
+      "unit": "unit",
+      "published": false,
+      "formal_name": "Jumlah hotel dan penginapan",
+      "measure_type": "total",
+      "unit_in_source": "unit",
+      "calculation": "SUM(R905HK2 + R905IK2)",
+      "source_variables": "R905HK2, R905IK2",
+      "interpretation": "Kapasitas akomodasi (unit usaha)",
+      "limitation": "Menghitung unit usaha, bukan kamar, tempat tidur, okupansi, kapasitas, mutu, atau jumlah wisatawan.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": false,
+      "public_value_label": "Nilai tidak disajikan pada katalog publik",
+      "measurement_unit": "unit",
+      "plain_language": "Kapasitas akomodasi (unit usaha)",
+      "operational_definition": "Menjumlahkan hitungan hotel (R905HK2) dan penginapan (R905IK2).",
+      "formula_readable": "jumlah total: unit hotel dan penginapan yang tercatat",
+      "numerator": "unit hotel dan penginapan yang tercatat",
+      "denominator": "Tidak berlaku; ukuran jumlah total",
+      "calculation_technical": "SUM(R905HK2 + R905IK2)",
+      "research_catalog_formula": "SUM(R905HK2 + R905IK2)",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R905HK2",
+          "label": "Jumlah hotel",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        },
+        {
+          "code": "R905IK2",
+          "label": "Jumlah penginapan: hostel/motel/losmen/wisma",
+          "valid_values": "Non-negative integer count",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Kapasitas akomodasi (unit usaha)",
+      "what_cannot_be_concluded": "Menghitung unit usaha, bukan kamar, tempat tidur, okupansi, kapasitas, mutu, atau jumlah wisatawan.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Metadata tersedia; nilai agregat tidak dimuat dalam rilis publik",
+      "public_comparison": null
+    },
+    {
+      "code": "C07",
+      "domain": "Ekonomi",
+      "name": "Penghasilan utama pertanian",
+      "unit": "%",
+      "published": true,
+      "formal_name": "Persentase desa dengan sumber penghasilan utama pertanian",
+      "measure_type": "share_villages",
+      "unit_in_source": "%",
+      "calculation": "COUNT(R906A = 1) / COUNT(desa) × 100",
+      "source_variables": "R906A",
+      "interpretation": "Struktur ekonomi desa (lapangan usaha mayoritas)",
+      "limitation": "Menggambarkan kategori utama pada tingkat desa, bukan persentase keluarga pertanian. Bukan ukuran produktivitas, pendapatan, kemiskinan, atau kontribusi sektor.",
+      "readiness": "VALID",
+      "metadata_status": "Turunan penelitian; rumus dibandingkan dengan katalog KPI lokal. Definisi formal BPS dan kecocokan seluruh kuesioner belum diverifikasi per butir.",
+      "public_value": true,
+      "public_value_label": "Nilai 12 indikator terpilih tersedia",
+      "measurement_unit": "%",
+      "plain_language": "Struktur ekonomi desa (lapangan usaha mayoritas)",
+      "operational_definition": "Satu desa masuk pembilang jika R906A berkode 1 (pertanian).",
+      "formula_readable": "(desa yang sumber penghasilan utama sebagian besar penduduknya berkode pertanian) ÷ (seluruh desa/kelurahan dalam cakupan) × 100%",
+      "numerator": "desa yang sumber penghasilan utama sebagian besar penduduknya berkode pertanian",
+      "denominator": "seluruh desa/kelurahan dalam cakupan",
+      "calculation_technical": "COUNT(R906A = 1) / COUNT(desa) × 100",
+      "research_catalog_formula": "COUNT(R906A = 1) / COUNT(desa) × 100",
+      "formula_crosschecked_with_kpi_catalog": true,
+      "source_variable_details": [
+        {
+          "code": "R906A",
+          "label": "Sumber penghasilan utama sebagian besar penduduk desa/kelurahan berasal dari lapangan usaha",
+          "valid_values": "1 = pertanian; 2 = industri; 3 = jasa",
+          "skip_rule": "No skip pattern applies to this variable in this extract"
+        }
+      ],
+      "interpretation_guidance": "Struktur ekonomi desa (lapangan usaha mayoritas)",
+      "what_cannot_be_concluded": "Menggambarkan kategori utama pada tingkat desa, bukan persentase keluarga pertanian. Bukan ukuran produktivitas, pendapatan, kemiskinan, atau kontribusi sektor.",
+      "metadata_provenance": {
+        "indicator_name_and_explanation": "Turunan kamus penelitian final dan KPI catalog proyek.",
+        "formula": "Kamus penelitian final; dibandingkan dengan KPI_CATALOG.csv proyek.",
+        "source_variable_labels": "INDICATOR_DICTIONARY.csv, extract kamus variabel PODES 2025 yang disimpan dalam berkas riset.",
+        "official_definition_status": "Belum diverifikasi butir per butir terhadap dokumen primer/kuesioner resmi; bukan klaim definisi resmi yang disahkan."
+      },
+      "publication_status": "Nilai pembanding terpilih tersedia pada rilis publik",
+      "public_comparison": {
+        "code": "C07",
+        "name": "Penghasilan utama pertanian",
+        "domain": "Ekonomi",
+        "urban": 29.8,
+        "rural": 94.2,
+        "province": 69.5,
+        "gap": -64.4
+      }
+    }
+  ]
+}

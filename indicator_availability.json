@@ -1,0 +1,312 @@
+{
+  "scope": "Public dashboard availability metadata; internal-only numeric aggregate values are excluded from this package.",
+  "release_eligibility": "Public metadata release approved by the project owner; internal-only numeric aggregate values remain excluded.",
+  "indicators": [
+    {
+      "code": "G01",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "G02",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "G03",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "G04",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "I01",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "I02",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "I03",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "I04",
+      "state": "constant_uninformative",
+      "short_label": "Konstan · tidak informatif",
+      "note": "Indicator metadata is approved for release; source is constant and no comparison value is published.",
+      "reconciliation_status": "VERIFIED_CONSTANT_SOURCE_AUDIT",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E01",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E02",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E03",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E04",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E05",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E06",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E07",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "E08",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "H01",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "H02",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "H03",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "H04",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "T01",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "T02",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "T03",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "D01",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "D02",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "D03",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "D04",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C01",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C02",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C03",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C04",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C05",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C06",
+      "state": "internal_aggregate_verified",
+      "short_label": "Agregat internal · tidak di kandidat",
+      "note": "Indicator metadata is approved for release; internal aggregate values are intentionally excluded from this public package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": false,
+      "public_release_eligibility": "ELIGIBLE"
+    },
+    {
+      "code": "C07",
+      "state": "included_in_candidate",
+      "short_label": "Nilai di kandidat",
+      "note": "Approved public comparison value is included in the release package.",
+      "reconciliation_status": "RECONCILED",
+      "public_candidate_included": true,
+      "public_release_eligibility": "ELIGIBLE"
+    }
+  ]
+}
