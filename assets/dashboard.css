@@ -349,3 +349,79 @@ body, [data-testid="stMain"], [data-testid="stSidebar"] { font-family: var(--pw-
 @container (max-width: 520px) {
   .st-key-spatial_map .scatterlayer .textpoint text { display: none !important; }
 }
+
+/* Small-screen usability and WebKit safeguards. Keep the approved desktop layout intact. */
+@media (max-width: 1000px) {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  [data-testid="stExpandSidebarButton"] { min-height: 44px !important; min-width: 44px !important; }
+  [data-testid="stSidebar"] [data-testid="stPageLink"] a { min-height: 44px; }
+  [data-testid="stMain"] input,
+  [data-testid="stMain"] textarea { font-size: 16px !important; }
+  [data-testid="stMain"] [data-testid="stTextInput"] input,
+  [data-testid="stMain"] [data-testid="stSelectbox"] input,
+  [data-testid="stMain"] [data-testid="stMultiSelect"] input { height: 44px !important; min-height: 44px !important; }
+  [data-testid="stMain"] [data-testid="stSelectbox"] [data-baseweb="select"] > div,
+  [data-testid="stMain"] [data-testid="stMultiSelect"] [data-baseweb="select"] > div {
+    min-height: 44px !important;
+    height: auto !important;
+  }
+  [data-testid="stMain"] [data-testid="stSelectbox"] button,
+  [data-testid="stMain"] [data-testid="stMultiSelect"] button {
+    box-sizing: border-box !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  [data-testid="stMain"] [data-testid="stMultiSelect"] input,
+  [data-testid="stMain"] [data-testid="stMultiSelect"] button[aria-label^="Remove "] {
+    height: 44px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  /* Expand Streamlit's selected-region list instead of clipping wrapped chips. */
+  [data-testid="stMain"] [data-testid="stMultiSelect"] [data-testid="stMultiSelectTagsContainer"] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  [data-testid="stMain"] [data-testid="stMultiSelect"] [data-rac] {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  [data-testid="stMain"] [data-testid="stButton"] button {
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+  [data-testid="stMain"] [data-testid="stTextInput"] button[aria-label^="Help for"] {
+    height: 44px !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+}
+@media (max-width: 760px) {
+  [data-testid="stMainBlockContainer"].block-container {
+    padding-left: max(.62rem, env(safe-area-inset-left, 0px));
+    padding-right: max(.62rem, env(safe-area-inset-right, 0px));
+  }
+  [data-baseweb="input"] > div,
+  [data-testid="stPageLink"] a,
+  [data-testid="stMain"] [data-baseweb="tab"],
+  [data-testid="stMain"] [role="tab"] { min-height: 44px !important; }
+  [data-testid="stMain"] [role="option"] { min-height: 44px; }
+  [data-testid="stMain"] code { overflow-wrap: anywhere; word-break: break-word; }
+  [data-testid="stMain"] pre { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+}
+@media (max-width: 430px) {
+  /* Keep the geography plot close to its natural map aspect ratio on narrow screens. */
+  .st-key-home_coverage_map [data-testid="stPlotlyChart"],
+  .st-key-home_coverage_map .js-plotly-plot,
+  .st-key-home_coverage_map .plot-container,
+  .st-key-home_coverage_map .svg-container,
+  .st-key-spatial_map [data-testid="stPlotlyChart"],
+  .st-key-spatial_map .js-plotly-plot,
+  .st-key-spatial_map .plot-container,
+  .st-key-spatial_map .svg-container { height: 280px !important; }
+  .st-key-home_coverage_map .js-plotly-plot svg,
+  .st-key-spatial_map .js-plotly-plot svg { height: 280px !important; }
+}
